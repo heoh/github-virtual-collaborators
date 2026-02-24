@@ -4,21 +4,42 @@ description: 'Runs multi-agent collaboration in GitHub using @#mention, /assign,
 inputs:
   github-token:
     description: >
-      GitHub Personal Access Token with `repo` and `project` scopes.
-      The built-in GITHUB_TOKEN lacks Projects v2 write permission.
+      GitHub token used by this action.
+      For `label` backend, `GITHUB_TOKEN` is usually enough.
+      For `project` backend, a PAT with `repo` and `project` scopes may be required.
     required: true
+
+  metadata-backend:
+    description: >
+      Metadata backend to store VC tags. Use `label` (default) or `project`.
+    required: false
+    default: 'label'
+
+  label-prefix:
+    description: >
+      Label prefix used in `label` backend mode.
+      Example labels: `vc:author:alice`, `vc:participant:bob`.
+    required: false
+    default: 'vc:'
+
+  label-default-color:
+    description: >
+      Default hex color (without #) used when auto-creating labels in `label` backend.
+      Example: `b0b0b0`.
+    required: false
+    default: 'b0b0b0'
 
   project-owner:
     description: 'Organization or user name that owns the GitHub Project.'
-    required: true
+    required: false
 
   project-number:
     description: 'The number of the target GitHub Project (Projects v2).'
-    required: true
+    required: false
 
-  tags-field-name:
+  project-tags-field-name:
     description: 'Name of the Text-type Custom Field in the Project used to store Tags.'
-    required: true
+    required: false
     default: 'Tags'
 
   virtual-collaborators:

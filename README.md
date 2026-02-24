@@ -4,14 +4,14 @@ GitHub Action that helps virtual collaborators (VCs) communicate across Issues a
 
 Operate multiple AI agents under one GitHub account with native Issue/PR collaboration workflows.
 
-It parses issue/PR/comment content, updates VC metadata in GitHub Projects v2 (as tags), and sends notifications to each VC’s dedicated notification inbox issue.
+It parses issue/PR/comment content, updates VC metadata via a configurable backend (`label` by default, or `project`), and sends notifications to each VC’s dedicated notification inbox issue.
 
 ---
 
 ## Features
 
 - Parses VC syntax in Issues/PRs/comments (`@#name`, `/assign`, `/unassign`, `/watch`, `/unwatch`).
-- Persists collaboration metadata to Project v2 text field (`author`, `participant`, `assignee` in `Tags`).
+- Persists collaboration metadata through either GitHub labels or Project fields (`author`, `participant`, `assignee`).
 - Emits VC-scoped notifications to dedicated inbox issues (`[VC:notifications] @#<name>`).
 - Handles `issues`, `issue_comment`, `pull_request`, and `check_run` events with one workflow.
 
@@ -44,16 +44,17 @@ jobs:
     steps:
       - uses: heoh/github-virtual-collaborators@v1
         with:
-          github-token: ${{ secrets.PROJECT_TOKEN }}
-          project-owner: org-or-user    # Replace with your Project owner
-          project-number: 1             # Replace with your Project number
-          tags-field-name: Tags         # Replace with your text field name
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+        # metadata-backend: 'label'
+        # label-prefix: 'vc:'
+        # label-default-color: '8a8a8a'
 ```
 
 Requirements:
 
-- Create a **Project v2** with a text field named `Tags`.
-- Add a PAT to repository secret `PROJECT_TOKEN` (scopes: `repo`, `project`).
+- `label` backend: `GITHUB_TOKEN` is usually enough.
+- `project` backend: configure Project v2 and use PAT (scopes: `repo`, `project`) when needed.
+  - If you want to avoid exposing metadata labels in Issues/PRs, consider using the `project` backend.
 
 Then test in an Issue/PR body:
 
@@ -65,7 +66,9 @@ Please review this @#carol
 
 ### Verify It Works (VC quick checks)
 
-- Check assignee items in Project view:
+- If using `label` backend, filter issues/PRs by label:
+  - `label:"vc:assignee:bob"`
+- If using `project` backend, check assignee items in Project view:
   - `Tags:"* assignee:bob *"`
 - Find a VC notification inbox issue by title (include closed issues in search):
   - `is:issue is:closed in:title "[VC:notifications] @#carol"`
@@ -76,26 +79,41 @@ Please review this @#carol
 
 Defined in `action.yml`:
 
+### Common
+
 - **`github-token`** (required)
-  - PAT with `repo` and `project` scopes
-  - `GITHUB_TOKEN` is not enough for Projects v2 write operations
-- **`project-owner`** (required)
-  - Org/user that owns the target Project
-- **`project-number`** (required)
-  - Project v2 number
-- **`tags-field-name`** (required, default: `Tags`)
-  - Name of the Project custom text field used to store tags
+  - Token used by this action
+- **`metadata-backend`** (optional, default: `label`)
+  - `label` or `project`
 - **`virtual-collaborators`** (optional, default: empty)
   - Comma-separated allow-list (without `@#`)
-  - Example: `agent-alice, reviewer-bot, qa-carol`
+  - Example: `agent-bot, reviewer-bot, qa-bot`
+
+### Metadata backend: `label`
+
+- **`label-prefix`** (optional, default: `vc:`)
+  - Label prefix used for metadata labels
+- **`label-default-color`** (optional, default: `8a8a8a`)
+  - Default color used when auto-creating missing labels
+
+### Metadata backend: `project`
+
+- **`project-owner`** (required in `project` mode)
+  - Org/user that owns the target Project
+- **`project-number`** (required in `project` mode)
+  - Project v2 number
+- **`project-tags-field-name`** (optional, default: `Tags`)
+  - Name of the Project custom text field used to store tags
 
 ---
 
 ## Required Setup
 
-1. Create a **Project v2** with **custom text field** (e.g., `Tags`).
-2. Create a repository secret named **`PROJECT_TOKEN`**.
-3. Use a PAT for `PROJECT_TOKEN` with scopes:
+1. Choose metadata backend:
+   - `label` (simple setup, usually `GITHUB_TOKEN`)
+   - `project` (advanced)
+2. If using `project`, create a **Project v2** with **custom text field** (e.g., `Tags`).
+3. If using `project`, create a repository secret (e.g., **`PROJECT_TOKEN`**) with scopes:
    - `repo`
    - `project`
 
@@ -118,8 +136,20 @@ Optional allow-list example:
           github-token: ${{ secrets.PROJECT_TOKEN }}
           project-owner: org-or-user
           project-number: 1
-          tags-field-name: Tags
+          project-tags-field-name: Tags
           virtual-collaborators: alice, bob, carol
+```
+
+Project backend example:
+
+```yaml
+      - uses: heoh/github-virtual-collaborators@v1
+        with:
+          github-token: ${{ secrets.PROJECT_TOKEN }}
+          metadata-backend: 'project'
+          project-owner: 'org-or-user'
+          project-number: 1
+          project-tags-field-name: 'Tags'
 ```
 
 ---
@@ -130,7 +160,7 @@ Optional allow-list example:
 - Prefer a dedicated bot/service account token for operational stability.
 - Follow least-privilege: grant only the minimum scopes required.
 
-This action updates Projects v2 metadata. In many environments, `GITHUB_TOKEN` is not sufficient for Projects v2 write operations, so a PAT may be required.
+When using `project` backend, `GITHUB_TOKEN` may be insufficient for Project writes in many environments, so a PAT can be required.
 
 ### Why not only `GITHUB_TOKEN`?
 
@@ -143,7 +173,7 @@ If tag updates or notifications fail, check the following:
 1. `PROJECT_TOKEN` exists and is valid (not expired/revoked).
 2. Token scopes include required access (`repo`, `project`).
 3. `project-owner` and `project-number` point to the intended Project v2.
-4. `tags-field-name` exactly matches an existing text field in the target project.
+4. `project-tags-field-name` exactly matches an existing text field in the target project.
 
 ---
 
@@ -180,7 +210,10 @@ Please review this, @#carol
 
 ## Tag Model
 
-Tags are stored as `key:value` pairs in your Project’s text field.
+Tags are represented as `key:value` pairs.
+
+- `label` backend: stored as prefixed labels (default prefix: `vc:`), e.g. `vc:author:alice`.
+- `project` backend: stored in the configured Project text field.
 
 - `author:<vc-name>`
 - `participant:<vc-name>`
@@ -188,17 +221,19 @@ Tags are stored as `key:value` pairs in your Project’s text field.
 
 > Note: the runtime may also use internal helper tags for watch-state handling.
 
-### Filtering in GitHub Project Views
+### Filtering by backend
 
-You can filter items by tag values in the Project view search bar.
+#### `project` backend (Project v2 view search):
 
-- Example filter (items authored by `alice`):
-  - `Tags:"* author:alice *"`
-
-You can apply the same pattern for other tag types, for example:
-
+- `Tags:"* author:alice *"`
 - `Tags:"* participant:carol *"`
 - `Tags:"* assignee:bob *"`
+
+#### `label` backend (Issue/PR search):
+
+- `label:"vc:author:alice"`
+- `label:"vc:participant:carol"`
+- `label:"vc:assignee:bob"`
 
 ---
 
@@ -218,7 +253,7 @@ When a relevant event occurs, the action posts a comment in that VC’s notifica
 
 1. An Issue/PR/Comment/Check Run event is triggered.
 2. The action parses VC-related syntax (header, commands, mentions).
-3. It reads/writes tags in the metadata storage (GitHub Project v2 item).
+3. It reads/writes tags in the selected metadata backend (`label` or `project`).
 4. It determines who should be notified.
 5. It creates (if needed) and comments on each VC’s notification issue.
 
@@ -254,13 +289,6 @@ npm run build
 npm run lint
 npm test
 ```
-
----
-
-## Notes
-
-- This action is designed for repositories that use GitHub Projects v2 for metadata tracking.
-- Behavior is implementation-driven; when in doubt, check `src/core/tag-util.ts` and handlers under `src/handlers/`.
 
 ---
 
