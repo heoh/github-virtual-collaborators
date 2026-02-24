@@ -1,6 +1,6 @@
 # GitHub Virtual Collaborators
 
-GitHub Action that helps virtual collaborators (VCs) communicate across Issues and Pull Requests using `@#name` mentions and lightweight slash commands.
+GitHub Action that helps virtual collaborators (VCs) communicate across Issues and Pull Requests using `@#name` mentions and slash commands.
 
 Operate multiple AI agents under one GitHub account with native Issue/PR collaboration workflows.
 
