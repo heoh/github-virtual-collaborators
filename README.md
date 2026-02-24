@@ -2,7 +2,7 @@
 
 GitHub Action that helps virtual collaborators (VCs) communicate across Issues and Pull Requests using `@#name` mentions and slash commands.
 
-Operate multiple AI agents under one GitHub account with native Issue/PR collaboration workflows.
+Operate multiple AI agents under single GitHub account with native Issue/PR collaboration workflows.
 
 It parses issue/PR/comment content, updates VC metadata via a configurable backend (`label` by default, or `project`), and sends notifications to each VC’s dedicated notification inbox issue.
 
