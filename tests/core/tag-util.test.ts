@@ -121,4 +121,174 @@ describe("updateTagStoreByContent allow-list", () => {
       ]),
     );
   });
+
+  test("ignores mentions and commands inside fenced code blocks", async () => {
+    const tagStore = new InMemoryTagStore();
+
+    const result = await updateTagStoreByContent(
+      tagStore,
+      4,
+      "",
+      [
+        "###### authored by @#alice",
+        "",
+        "```md",
+        "@#bob",
+        "/assign @#carol",
+        "```",
+        "",
+        "hello @#dave",
+      ].join("\n"),
+    );
+
+    const tags = await tagStore.getTags(4);
+
+    expect(result.author).toBe("alice");
+    expect(result.mentions).toEqual(expect.arrayContaining(["alice", "dave"]));
+    expect(result.mentions).not.toEqual(
+      expect.arrayContaining(["bob", "carol"]),
+    );
+    expect(tags).toEqual(
+      expect.arrayContaining([
+        "author:alice",
+        "participant:alice",
+        "participant:dave",
+      ]),
+    );
+    expect(tags).not.toContain("participant:bob");
+    expect(tags).not.toContain("participant:carol");
+    expect(tags).not.toContain("assignee:carol");
+  });
+
+  test("ignores mentions and commands inside inline code", async () => {
+    const tagStore = new InMemoryTagStore();
+
+    const result = await updateTagStoreByContent(
+      tagStore,
+      5,
+      "",
+      [
+        "###### authored by @#alice",
+        "",
+        "`@#bob` and `/assign @#carol`",
+        "real mention @#dave",
+      ].join("\n"),
+    );
+
+    const tags = await tagStore.getTags(5);
+
+    expect(result.author).toBe("alice");
+    expect(result.mentions).toEqual(expect.arrayContaining(["alice", "dave"]));
+    expect(result.mentions).not.toEqual(
+      expect.arrayContaining(["bob", "carol"]),
+    );
+    expect(tags).toContain("participant:dave");
+    expect(tags).not.toContain("participant:bob");
+    expect(tags).not.toContain("participant:carol");
+    expect(tags).not.toContain("assignee:carol");
+  });
+
+  test("ignores mentions and commands inside blockquote lines", async () => {
+    const tagStore = new InMemoryTagStore();
+
+    const result = await updateTagStoreByContent(
+      tagStore,
+      6,
+      "",
+      [
+        "###### authored by @#alice",
+        "",
+        "> @#bob",
+        "> /assign @#carol",
+        "real mention @#dave",
+      ].join("\n"),
+    );
+
+    const tags = await tagStore.getTags(6);
+
+    expect(result.author).toBe("alice");
+    expect(result.mentions).toEqual(expect.arrayContaining(["alice", "dave"]));
+    expect(result.mentions).not.toEqual(
+      expect.arrayContaining(["bob", "carol"]),
+    );
+    expect(tags).toContain("participant:dave");
+    expect(tags).not.toContain("participant:bob");
+    expect(tags).not.toContain("participant:carol");
+    expect(tags).not.toContain("assignee:carol");
+  });
+
+  test("keeps normal command behavior outside masked regions", async () => {
+    const tagStore = new InMemoryTagStore();
+
+    await updateTagStoreByContent(
+      tagStore,
+      7,
+      "",
+      [
+        "###### authored by @#alice",
+        "",
+        "> /assign @#bob",
+        "```",
+        "/assign @#carol",
+        "```",
+        "/assign @#dave",
+      ].join("\n"),
+    );
+
+    const tags = await tagStore.getTags(7);
+
+    expect(tags).toContain("assignee:dave");
+    expect(tags).toContain("participant:dave");
+    expect(tags).not.toContain("assignee:bob");
+    expect(tags).not.toContain("assignee:carol");
+  });
+
+  test("parses title mentions while ignoring masked markdown in title", async () => {
+    const tagStore = new InMemoryTagStore();
+
+    const result = await updateTagStoreByContent(
+      tagStore,
+      8,
+      "real @#alice and `@#bob`",
+      "body mention @#carol",
+    );
+
+    const tags = await tagStore.getTags(8);
+
+    expect(result.mentions).toEqual(
+      expect.arrayContaining(["alice", "carol"]),
+    );
+    expect(result.mentions).not.toEqual(expect.arrayContaining(["bob"]));
+    expect(tags).toContain("participant:alice");
+    expect(tags).toContain("participant:carol");
+    expect(tags).not.toContain("participant:bob");
+  });
+
+  test("handles incomplete markdown safely without throwing", async () => {
+    const tagStore = new InMemoryTagStore();
+
+    const result = await updateTagStoreByContent(
+      tagStore,
+      9,
+      "title with `@#alice",
+      [
+        "###### authored by @#bob",
+        "```ts",
+        "@#carol",
+        "/assign @#dave",
+        "",
+        "> @#erin",
+        "real mention @#frank",
+      ].join("\n"),
+    );
+
+    expect(result.author).toBe("bob");
+    expect(result.mentions).toEqual(expect.arrayContaining(["bob"]));
+    expect(result.mentions).not.toEqual(expect.arrayContaining(["erin", "dave"]));
+
+    const tags = await tagStore.getTags(9);
+    expect(tags).toContain("author:bob");
+    expect(tags).not.toContain("participant:erin");
+    expect(tags).not.toContain("assignee:dave");
+  });
 });
