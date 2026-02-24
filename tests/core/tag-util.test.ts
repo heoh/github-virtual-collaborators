@@ -108,10 +108,7 @@ describe("updateTagStoreByContent allow-list", () => {
     const tags = await tagStore.getTags(3);
 
     expect(result.author).toBe("carol");
-    expect(result.mentions).toEqual(expect.arrayContaining(["erin"]));
-    expect(result.mentions).not.toEqual(
-      expect.arrayContaining(["carol", "dave"]),
-    );
+    expect(result.mentions).toEqual(["erin"]);
     expect(tags).toEqual(
       expect.arrayContaining([
         "author:carol",
@@ -145,10 +142,7 @@ describe("updateTagStoreByContent allow-list", () => {
     const tags = await tagStore.getTags(4);
 
     expect(result.author).toBe("alice");
-    expect(result.mentions).toEqual(expect.arrayContaining(["dave"]));
-    expect(result.mentions).not.toEqual(
-      expect.arrayContaining(["alice", "bob", "carol"]),
-    );
+    expect(result.mentions).toEqual(["dave"]);
     expect(tags).toEqual(
       expect.arrayContaining([
         "author:alice",
@@ -179,10 +173,7 @@ describe("updateTagStoreByContent allow-list", () => {
     const tags = await tagStore.getTags(5);
 
     expect(result.author).toBe("alice");
-    expect(result.mentions).toEqual(expect.arrayContaining(["dave"]));
-    expect(result.mentions).not.toEqual(
-      expect.arrayContaining(["alice", "bob", "carol"]),
-    );
+    expect(result.mentions).toEqual(["dave"]);
     expect(tags).toContain("participant:dave");
     expect(tags).not.toContain("participant:bob");
     expect(tags).not.toContain("participant:carol");
@@ -208,10 +199,7 @@ describe("updateTagStoreByContent allow-list", () => {
     const tags = await tagStore.getTags(6);
 
     expect(result.author).toBe("alice");
-    expect(result.mentions).toEqual(expect.arrayContaining(["dave"]));
-    expect(result.mentions).not.toEqual(
-      expect.arrayContaining(["alice", "bob", "carol"]),
-    );
+    expect(result.mentions).toEqual(["dave"]);
     expect(tags).toContain("participant:dave");
     expect(tags).not.toContain("participant:bob");
     expect(tags).not.toContain("participant:carol");
@@ -250,14 +238,13 @@ describe("updateTagStoreByContent allow-list", () => {
     const result = await updateTagStoreByContent(
       tagStore,
       8,
-      "real @#alice and `@#bob`",
-      "body mention @#carol",
+      "real @#carol and `@#bob`",
+      "body mention @#alice",
     );
 
     const tags = await tagStore.getTags(8);
 
-    expect(result.mentions).toEqual(expect.arrayContaining(["alice", "carol"]));
-    expect(result.mentions).not.toEqual(expect.arrayContaining(["bob"]));
+    expect(result.mentions).toEqual(["carol", "alice"]);
     expect(tags).toContain("participant:alice");
     expect(tags).toContain("participant:carol");
     expect(tags).not.toContain("participant:bob");
@@ -282,10 +269,7 @@ describe("updateTagStoreByContent allow-list", () => {
     );
 
     expect(result.author).toBe("bob");
-    expect(result.mentions).toEqual(expect.arrayContaining(["alice"]));
-    expect(result.mentions).not.toEqual(
-      expect.arrayContaining(["bob", "erin", "dave"]),
-    );
+    expect(result.mentions).toEqual(["alice"]);
 
     const tags = await tagStore.getTags(9);
     expect(tags).toContain("author:bob");
