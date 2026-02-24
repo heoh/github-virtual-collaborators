@@ -19,7 +19,7 @@ export function getInputs() {
   const metadataLabelPrefix =
     core.getInput("label-prefix", { required: false }) || "vc:";
   const labelDefaultColor =
-    core.getInput("label-default-color", { required: false }) || "8a8a8a";
+    core.getInput("label-default-color", { required: false }) || "b0b0b0";
 
   const projectOwner = projectOwnerInput || github.context.repo.owner;
   const projectNumber = projectNumberInput
