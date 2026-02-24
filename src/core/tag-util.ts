@@ -52,9 +52,9 @@ export async function updateTagStoreByContent(
   }
 
   // Process Mentions
-  let mentions: string[] = [];
+  const mentionSource = buildMentionSource(maskedTitle, maskedBody);
+  const mentionSet = new Set<string>();
   const mentionRegex = /@#([\w-]+)/g;
-  const mentionSource = `${maskedTitle}\n${maskedBody}`;
   let mentionMatch;
   while ((mentionMatch = mentionRegex.exec(mentionSource)) !== null) {
     const mentionedName = mentionMatch[1];
@@ -63,10 +63,29 @@ export async function updateTagStoreByContent(
     }
     tagStore.removeTags(issueNumber, [`unwatcher:${mentionedName}`]);
     tagStore.addTags(issueNumber, [`participant:${mentionedName}`]);
-    mentions.push(mentionedName);
+    mentionSet.add(mentionedName);
   }
 
+  const mentions = Array.from(mentionSet);
+
   return { author, mentions };
+}
+
+function buildMentionSource(maskedTitle: string, maskedBody: string): string {
+  const bodyLines = maskedBody.split(/\r?\n/);
+  const mentionLines = bodyLines.filter(
+    (line) => !isHeaderLine(line) && !isCommandLine(line),
+  );
+
+  return `${maskedTitle}\n${mentionLines.join("\n")}`;
+}
+
+function isHeaderLine(line: string): boolean {
+  return /^\s*######\s+authored\s+by\s+@#[\w-]+\s*$/i.test(line);
+}
+
+function isCommandLine(line: string): boolean {
+  return /^\s*\/\w+(?:\s+.*)?$/.test(line);
 }
 
 async function processCommand(
