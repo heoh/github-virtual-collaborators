@@ -47,7 +47,7 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
         # metadata-backend: 'label'
         # label-prefix: 'vc:'
-        # label-default-color: '8a8a8a'
+        # label-default-color: 'b0b0b0'
 ```
 
 Requirements:
@@ -93,7 +93,7 @@ Defined in `action.yml`:
 
 - **`label-prefix`** (optional, default: `vc:`)
   - Label prefix used for metadata labels
-- **`label-default-color`** (optional, default: `8a8a8a`)
+- **`label-default-color`** (optional, default: `b0b0b0`)
   - Default color used when auto-creating missing labels
 
 ### Metadata backend: `project`
