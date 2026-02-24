@@ -4,20 +4,19 @@ GitHub Action that helps virtual collaborators (VCs) communicate across Issues a
 
 Operate multiple AI agents under single GitHub account with native Issue/PR collaboration workflows.
 
-It parses issue/PR/comment content, updates VC metadata via a configurable backend (`label` by default, or `project`), and sends notifications to each VC’s dedicated notification inbox issue.
-
 ---
 
 ## Features
 
-- Parses VC syntax in Issues/PRs/comments (`@#name`, `/assign`, `/unassign`, `/watch`, `/unwatch`).
+- Parses VC syntax in Issues/PRs/comments (`@#name`, `/assign`, `/watch`).
 - Persists collaboration metadata through either GitHub labels or Project fields (`author`, `participant`, `assignee`).
-- Emits VC-scoped notifications to dedicated inbox issues (`[VC:notifications] @#<name>`).
-- Handles `issues`, `issue_comment`, `pull_request`, and `check_run` events with one workflow.
+- Emits VC-scoped notifications to dedicated inbox issues.
 
 ---
 
 ## Quick Start
+
+If you are new to this action, start with the **default `label` backend**.
 
 Create `.github/workflows/virtual-collaborators.yml`:
 
@@ -45,18 +44,9 @@ jobs:
       - uses: heoh/github-virtual-collaborators@v1
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-        # metadata-backend: 'label'
-        # label-prefix: 'vc:'
-        # label-default-color: 'b0b0b0'
 ```
 
-Requirements:
-
-- `label` backend: `GITHUB_TOKEN` is usually enough.
-- `project` backend: configure Project v2 and use PAT (scopes: `repo`, `project`) when needed.
-  - If you want to avoid exposing metadata labels in Issues/PRs, consider using the `project` backend.
-
-Then test in an Issue/PR body:
+Test body example:
 
 ```md
 ###### authored by @#alice
@@ -64,83 +54,42 @@ Then test in an Issue/PR body:
 Please review this @#carol
 ```
 
-### Verify It Works (VC quick checks)
+### Verify It Works (Checklist)
 
-- If using `label` backend, filter issues/PRs by label:
+- [ ] Add VC syntax to an Issue/PR body or comment.
+- [ ] Confirm metadata labels appear (example: `vc:assignee:bob`).
+- [ ] Confirm notification inbox issue exists:
+  - `is:issue is:closed in:title "[VC:notifications] @#bob"`
+- [ ] Confirm a new comment is posted in the inbox when relevant events happen.
+
+Useful searches:
+
+- Label backend:
   - `label:"vc:assignee:bob"`
-- If using `project` backend, check assignee items in Project view:
-  - `Tags:"* assignee:bob *"`
-- Find a VC notification inbox issue by title (include closed issues in search):
-  - `is:issue is:closed in:title "[VC:notifications] @#carol"`
 
 ---
 
-## Inputs
+## Choose Your Backend
 
-Defined in `action.yml`:
+| Backend | Best for | Token | Pros | Trade-offs |
+| --- | --- | --- | --- | --- |
+| `label` (default) | First setup, simplest operation | Usually `GITHUB_TOKEN` | Fast setup, easy search via labels | Metadata labels are visible on Issue/PR |
+| `project` | Teams that want metadata outside labels | PAT (`repo`, `project`) | Keeps metadata in Project field | More setup (Project v2 + field + token) |
 
-### Common
-
-- **`github-token`** (required)
-  - Token used by this action
-- **`metadata-backend`** (optional, default: `label`)
-  - `label` or `project`
-- **`virtual-collaborators`** (optional, default: empty)
-  - Comma-separated allow-list (without `@#`)
-  - Example: `agent-bot, reviewer-bot, qa-bot`
-
-### Metadata backend: `label`
-
-- **`label-prefix`** (optional, default: `vc:`)
-  - Label prefix used for metadata labels
-- **`label-default-color`** (optional, default: `b0b0b0`)
-  - Default color used when auto-creating missing labels
-
-### Metadata backend: `project`
-
-- **`project-owner`** (required in `project` mode)
-  - Org/user that owns the target Project
-- **`project-number`** (required in `project` mode)
-  - Project v2 number
-- **`project-tags-field-name`** (optional, default: `Tags`)
-  - Name of the Project custom text field used to store tags
+> Recommended path: start with `label`, then move to `project` only if needed.
 
 ---
 
-## Required Setup
+## Project Backend Setup (Advanced)
 
-1. Choose metadata backend:
-   - `label` (simple setup, usually `GITHUB_TOKEN`)
-   - `project` (advanced)
-2. If using `project`, create a **Project v2** with **custom text field** (e.g., `Tags`).
-3. If using `project`, create a repository secret (e.g., **`PROJECT_TOKEN`**) with scopes:
+Use this only if you prefer storing metadata in Project v2 field instead of labels.
+
+1. Create or choose a **Project v2**.
+2. Add a **Text custom field** (default field name: `Tags`).
+3. Create a secret (for example `PROJECT_TOKEN`) with scopes:
    - `repo`
    - `project`
-
----
-
-## Usage
-
-For advanced configuration and behavior details:
-
-- Inputs reference: [Inputs](#inputs)
-- Collaboration syntax: [VC Syntax](#vc-syntax)
-- Metadata model and filtering: [Tag Model](#tag-model)
-- Notification behavior: [Notifications](#notifications)
-
-Optional allow-list example:
-
-```yaml
-      - uses: heoh/github-virtual-collaborators@v1
-        with:
-          github-token: ${{ secrets.PROJECT_TOKEN }}
-          project-owner: org-or-user
-          project-number: 1
-          project-tags-field-name: Tags
-          virtual-collaborators: alice, bob, carol
-```
-
-Project backend example:
+4. Use the workflow below:
 
 ```yaml
       - uses: heoh/github-virtual-collaborators@v1
@@ -152,28 +101,26 @@ Project backend example:
           project-tags-field-name: 'Tags'
 ```
 
+Project view search example:
+
+- `Tags:"* assignee:bob *"`
+
 ---
 
-## Security & Permissions
+## Inputs
 
-- Store tokens only in GitHub Secrets (never hardcode tokens in workflow YAML).
-- Prefer a dedicated bot/service account token for operational stability.
-- Follow least-privilege: grant only the minimum scopes required.
+Defined in `action.yml`.
 
-When using `project` backend, `GITHUB_TOKEN` may be insufficient for Project writes in many environments, so a PAT can be required.
-
-### Why not only `GITHUB_TOKEN`?
-
-`GITHUB_TOKEN` often lacks Projects v2 write permission depending on repository and organization policies. If metadata updates fail, switch to a PAT-based secret.
-
-### Permission Troubleshooting
-
-If tag updates or notifications fail, check the following:
-
-1. `PROJECT_TOKEN` exists and is valid (not expired/revoked).
-2. Token scopes include required access (`repo`, `project`).
-3. `project-owner` and `project-number` point to the intended Project v2.
-4. `project-tags-field-name` exactly matches an existing text field in the target project.
+| Input | Required | Default | Applies to | Description |
+| --- | --- | --- | --- | --- |
+| `github-token` | yes | - | all | Token used by this action |
+| `metadata-backend` | no | `label` | all | Metadata backend: `label` or `project` |
+| `virtual-collaborators` | no | `''` | all | Comma-separated allow-list (without `@#`) |
+| `label-prefix` | no | `vc:` | label | Label prefix for metadata labels |
+| `label-default-color` | no | `b0b0b0` | label | Default color for auto-created labels |
+| `project-owner` | conditionally required | - | project | Org/user that owns the target Project |
+| `project-number` | conditionally required | - | project | Project v2 number |
+| `project-tags-field-name` | no | `Tags` | project | Text field name used for tags |
 
 ---
 
@@ -181,15 +128,11 @@ If tag updates or notifications fail, check the following:
 
 ### Header
 
-Use at the top of content:
-
 ```md
 ###### authored by @#alice
 ```
 
-### Commands
-
-Use at the beginning of a line:
+### Commands (at line-start)
 
 ```md
 /assign @#bob
@@ -200,8 +143,6 @@ Use at the beginning of a line:
 
 ### Mentions
 
-Mention a VC anywhere in text:
-
 ```md
 Please review this, @#carol
 ```
@@ -210,64 +151,66 @@ Please review this, @#carol
 
 ## Tag Model
 
-Tags are represented as `key:value` pairs.
-
-- `label` backend: stored as prefixed labels (default prefix: `vc:`), e.g. `vc:author:alice`.
-- `project` backend: stored in the configured Project text field.
+Tags are represented as `key:value` pairs:
 
 - `author:<vc-name>`
 - `participant:<vc-name>`
 - `assignee:<vc-name>`
 
-> Note: the runtime may also use internal helper tags for watch-state handling.
+Storage:
 
-### Filtering by backend
-
-#### `project` backend (Project v2 view search):
-
-- `Tags:"* author:alice *"`
-- `Tags:"* participant:carol *"`
-- `Tags:"* assignee:bob *"`
-
-#### `label` backend (Issue/PR search):
-
-- `label:"vc:author:alice"`
-- `label:"vc:participant:carol"`
-- `label:"vc:assignee:bob"`
+- `label` backend: stored as labels (default prefix `vc:`), e.g. `vc:author:alice`
+- `project` backend: stored in configured Project text field
 
 ---
 
 ## Notifications
 
-For each VC, the action uses a dedicated issue:
+Each VC has a dedicated inbox issue:
 
 - Title: `[VC:notifications] @#<vc-name>`
-- The inbox issue can be managed as **closed** state. If you cannot find it, search including closed issues.
-  - Example: `is:issue is:closed in:title "[VC:notifications] @#carol"`
+- Inbox issues may be managed as **closed** state
 
-When a relevant event occurs, the action posts a comment in that VC’s notification issue.
+If you cannot find one, search including closed issues:
+
+- `is:issue is:closed in:title "[VC:notifications] @#carol"`
+
+---
+
+## Security & Permissions
+
+- Store tokens in GitHub Secrets only.
+- Follow least privilege.
+- For `project` backend, `GITHUB_TOKEN` may not have enough Project write permission in some org/repo settings.
+
+Permission troubleshooting:
+
+1. Check token exists and is valid.
+2. Check required scopes (`repo`, `project`).
+3. Check `project-owner` and `project-number` target the correct Project.
+4. Check `project-tags-field-name` matches existing Text field name exactly.
 
 ---
 
 ## How It Works
 
-1. An Issue/PR/Comment/Check Run event is triggered.
-2. The action parses VC-related syntax (header, commands, mentions).
-3. It reads/writes tags in the selected metadata backend (`label` or `project`).
-4. It determines who should be notified.
-5. It creates (if needed) and comments on each VC’s notification issue.
+1. Issue/PR/Comment/Check Run event triggers.
+2. Action parses VC syntax.
+3. Action updates metadata in selected backend.
+4. Action determines notification targets.
+5. Action creates/comments on VC notification inbox issues.
 
 ---
 
 ## Release (Maintainers)
 
-This repository includes a manual release workflow:
+This section is for maintainers.
 
 - Workflow: `.github/workflows/release.yml`
 - Trigger: **Actions → Release → Run workflow**
-- Input: `version` (SemVer without `v`, e.g., `1.2.3`)
+- Input: `version` (SemVer without `v`, e.g. `1.2.3`)
 
-What it does:
+Workflow behavior:
 
 1. Validates input and ensures the run is on `main`.
 2. Updates `package.json`/`package-lock.json` version.
