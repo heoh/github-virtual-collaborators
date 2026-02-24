@@ -1,10 +1,9 @@
-/******/ (() => { // webpackBootstrap
-/******/ 	var __webpack_modules__ = ({
+import { createRequire as __WEBPACK_EXTERNAL_createRequire } from "module";
+/******/ var __webpack_modules__ = ({
 
 /***/ 4914:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
-"use strict";
 
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
@@ -107,7 +106,6 @@ function escapeProperty(s) {
 /***/ 7484:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
-"use strict";
 
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
@@ -458,7 +456,6 @@ exports.platform = __importStar(__nccwpck_require__(8968));
 /***/ 4753:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
-"use strict";
 
 // For internal use, subject to change.
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
@@ -527,7 +524,6 @@ exports.prepareKeyValueMessage = prepareKeyValueMessage;
 /***/ 5306:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
-"use strict";
 
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
@@ -611,7 +607,6 @@ exports.OidcClient = OidcClient;
 /***/ 1976:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
-"use strict";
 
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
@@ -680,7 +675,6 @@ exports.toPlatformPath = toPlatformPath;
 /***/ 8968:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
-"use strict";
 
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
@@ -781,7 +775,6 @@ exports.getDetails = getDetails;
 /***/ 1847:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
-"use strict";
 
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
@@ -1071,7 +1064,6 @@ exports.summary = _summary;
 /***/ 302:
 /***/ ((__unused_webpack_module, exports) => {
 
-"use strict";
 
 // We use any as a valid input type
 /* eslint-disable @typescript-eslint/no-explicit-any */
@@ -1118,7 +1110,6 @@ exports.toCommandProperties = toCommandProperties;
 /***/ 5236:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
-"use strict";
 
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
@@ -1228,7 +1219,6 @@ exports.getExecOutput = getExecOutput;
 /***/ 6665:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
-"use strict";
 
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
@@ -1853,7 +1843,6 @@ class ExecState extends events.EventEmitter {
 /***/ 1648:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
-"use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.Context = void 0;
@@ -1916,7 +1905,6 @@ exports.Context = Context;
 /***/ 3228:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
-"use strict";
 
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
@@ -1964,7 +1952,6 @@ exports.getOctokit = getOctokit;
 /***/ 5156:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
-"use strict";
 
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
@@ -2041,7 +2028,6 @@ exports.getApiBaseUrl = getApiBaseUrl;
 /***/ 8006:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
-"use strict";
 
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
@@ -2107,7 +2093,6 @@ exports.getOctokitOptions = getOctokitOptions;
 /***/ 4552:
 /***/ (function(__unused_webpack_module, exports) {
 
-"use strict";
 
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
@@ -2195,7 +2180,6 @@ exports.PersonalAccessTokenCredentialHandler = PersonalAccessTokenCredentialHand
 /***/ 4844:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
-"use strict";
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
@@ -2854,7 +2838,6 @@ const lowercaseKeys = (obj) => Object.keys(obj).reduce((c, k) => ((c[k.toLowerCa
 /***/ 4988:
 /***/ ((__unused_webpack_module, exports) => {
 
-"use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.checkBypass = exports.getProxyUrl = void 0;
@@ -2956,7 +2939,6 @@ class DecodedURL extends URL {
 /***/ 5207:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
-"use strict";
 
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
@@ -3146,7 +3128,6 @@ exports.getCmdPath = getCmdPath;
 /***/ 4994:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
-"use strict";
 
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
@@ -3452,7 +3433,6 @@ function copyFile(srcFile, destFile, force) {
 /***/ 7864:
 /***/ ((module) => {
 
-"use strict";
 
 var __defProp = Object.defineProperty;
 var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
@@ -3537,7 +3517,6 @@ var createTokenAuth = function createTokenAuth2(token) {
 /***/ 1897:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-"use strict";
 
 var __defProp = Object.defineProperty;
 var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
@@ -3713,7 +3692,6 @@ var Octokit = class {
 /***/ 4471:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-"use strict";
 
 var __defProp = Object.defineProperty;
 var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
@@ -4097,7 +4075,6 @@ var endpoint = withDefaults(null, DEFAULTS);
 /***/ 7:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-"use strict";
 
 var __defProp = Object.defineProperty;
 var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
@@ -4254,7 +4231,6 @@ function withCustomRequest(customRequest) {
 /***/ 8082:
 /***/ ((module) => {
 
-"use strict";
 
 var __defProp = Object.defineProperty;
 var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
@@ -4655,7 +4631,6 @@ paginateRest.VERSION = VERSION;
 /***/ 4935:
 /***/ ((module) => {
 
-"use strict";
 
 var __defProp = Object.defineProperty;
 var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
@@ -6825,7 +6800,6 @@ legacyRestEndpointMethods.VERSION = VERSION;
 /***/ 3708:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-"use strict";
 
 var __create = Object.create;
 var __defProp = Object.defineProperty;
@@ -6923,7 +6897,6 @@ var RequestError = class extends Error {
 /***/ 8636:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-"use strict";
 
 var __defProp = Object.defineProperty;
 var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
@@ -7334,7 +7307,6 @@ function removeHook(state, name, method) {
 /***/ 4150:
 /***/ ((__unused_webpack_module, exports) => {
 
-"use strict";
 
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
@@ -7419,7 +7391,6 @@ module.exports = __nccwpck_require__(218);
 /***/ 218:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
-"use strict";
 
 
 var net = __nccwpck_require__(9278);
@@ -7691,7 +7662,6 @@ exports.debug = debug; // for test
 /***/ 6752:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-"use strict";
 
 
 const Client = __nccwpck_require__(6197)
@@ -7866,7 +7836,6 @@ module.exports.mockErrors = mockErrors
 /***/ 9965:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-"use strict";
 
 
 const { InvalidArgumentError } = __nccwpck_require__(8707)
@@ -8083,7 +8052,6 @@ module.exports = {
 /***/ 4660:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-"use strict";
 
 
 const { AsyncResource } = __nccwpck_require__(290)
@@ -8195,7 +8163,6 @@ module.exports = connect
 /***/ 6862:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-"use strict";
 
 
 const {
@@ -8452,7 +8419,6 @@ module.exports = pipeline
 /***/ 4043:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-"use strict";
 
 
 const Readable = __nccwpck_require__(9927)
@@ -8640,7 +8606,6 @@ module.exports.RequestHandler = RequestHandler
 /***/ 3560:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-"use strict";
 
 
 const { finished, PassThrough } = __nccwpck_require__(2203)
@@ -8868,7 +8833,6 @@ module.exports = stream
 /***/ 1882:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-"use strict";
 
 
 const { InvalidArgumentError, RequestAbortedError, SocketError } = __nccwpck_require__(8707)
@@ -8981,7 +8945,6 @@ module.exports = upgrade
 /***/ 6615:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-"use strict";
 
 
 module.exports.request = __nccwpck_require__(4043)
@@ -8996,7 +8959,6 @@ module.exports.connect = __nccwpck_require__(4660)
 /***/ 9927:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-"use strict";
 // Ported from https://github.com/nodejs/undici/pull/907
 
 
@@ -9379,7 +9341,6 @@ module.exports = { getResolveErrorBodyCallback }
 /***/ 1093:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-"use strict";
 
 
 const {
@@ -9577,7 +9538,6 @@ module.exports = BalancedPool
 /***/ 479:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-"use strict";
 
 
 const { kConstruct } = __nccwpck_require__(296)
@@ -10423,7 +10383,6 @@ module.exports = {
 /***/ 4738:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-"use strict";
 
 
 const { kConstruct } = __nccwpck_require__(296)
@@ -10575,7 +10534,6 @@ module.exports = {
 /***/ 296:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-"use strict";
 
 
 module.exports = {
@@ -10588,7 +10546,6 @@ module.exports = {
 /***/ 3993:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-"use strict";
 
 
 const assert = __nccwpck_require__(2613)
@@ -10645,7 +10602,6 @@ module.exports = {
 /***/ 6197:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-"use strict";
 // @ts-check
 
 
@@ -12936,7 +12892,6 @@ module.exports = Client
 /***/ 3194:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-"use strict";
 
 
 /* istanbul ignore file: only for Node 12 */
@@ -12992,7 +12947,6 @@ module.exports = function () {
 /***/ 9237:
 /***/ ((module) => {
 
-"use strict";
 
 
 // https://wicg.github.io/cookie-store/#cookie-maximum-attribute-value-size
@@ -13012,7 +12966,6 @@ module.exports = {
 /***/ 3168:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-"use strict";
 
 
 const { parseSetCookie } = __nccwpck_require__(8915)
@@ -13203,7 +13156,6 @@ module.exports = {
 /***/ 8915:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-"use strict";
 
 
 const { maxNameValuePairSize, maxAttributeValueSize } = __nccwpck_require__(9237)
@@ -13528,7 +13480,6 @@ module.exports = {
 /***/ 3834:
 /***/ ((module) => {
 
-"use strict";
 
 
 /**
@@ -13810,7 +13761,6 @@ module.exports = {
 /***/ 9136:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-"use strict";
 
 
 const net = __nccwpck_require__(9278)
@@ -14007,7 +13957,6 @@ module.exports = buildConnector
 /***/ 735:
 /***/ ((module) => {
 
-"use strict";
 
 
 /** @type {Record<string, string | undefined>} */
@@ -14133,7 +14082,6 @@ module.exports = {
 /***/ 8707:
 /***/ ((module) => {
 
-"use strict";
 
 
 class UndiciError extends Error {
@@ -14371,7 +14319,6 @@ module.exports = {
 /***/ 4655:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-"use strict";
 
 
 const {
@@ -14948,7 +14895,6 @@ module.exports = {
 /***/ 3440:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-"use strict";
 
 
 const assert = __nccwpck_require__(2613)
@@ -15478,7 +15424,6 @@ module.exports = {
 /***/ 1:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-"use strict";
 
 
 const Dispatcher = __nccwpck_require__(992)
@@ -15678,7 +15623,6 @@ module.exports = DispatcherBase
 /***/ 992:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-"use strict";
 
 
 const EventEmitter = __nccwpck_require__(4434)
@@ -15705,7 +15649,6 @@ module.exports = Dispatcher
 /***/ 8923:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-"use strict";
 
 
 const Busboy = __nccwpck_require__(9581)
@@ -16326,7 +16269,6 @@ module.exports = {
 /***/ 7326:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-"use strict";
 
 
 const { MessageChannel, receiveMessageOnPort } = __nccwpck_require__(8167)
@@ -17119,7 +17061,6 @@ module.exports = {
 /***/ 3041:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-"use strict";
 
 
 const { Blob, File: NativeFile } = __nccwpck_require__(181)
@@ -17471,7 +17412,6 @@ module.exports = { File, FileLike, isFileLike }
 /***/ 3073:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-"use strict";
 
 
 const { isBlobLike, toUSVString, makeIterator } = __nccwpck_require__(5523)
@@ -17744,7 +17684,6 @@ module.exports = { FormData }
 /***/ 5628:
 /***/ ((module) => {
 
-"use strict";
 
 
 // In case of breaking changes, increase the version
@@ -17792,7 +17731,6 @@ module.exports = {
 /***/ 6349:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-"use strict";
 // https://github.com/Ethan-Arrowood/undici-fetch
 
 
@@ -18393,7 +18331,6 @@ module.exports = {
 /***/ 2315:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-"use strict";
 // https://github.com/Ethan-Arrowood/undici-fetch
 
 
@@ -20549,7 +20486,6 @@ module.exports = {
 /***/ 5194:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-"use strict";
 /* globals AbortController */
 
 
@@ -21503,7 +21439,6 @@ module.exports = { Request, makeRequest }
 /***/ 8676:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-"use strict";
 
 
 const { Headers, HeadersList, fill } = __nccwpck_require__(6349)
@@ -22082,7 +22017,6 @@ module.exports = {
 /***/ 9710:
 /***/ ((module) => {
 
-"use strict";
 
 
 module.exports = {
@@ -22100,7 +22034,6 @@ module.exports = {
 /***/ 5523:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-"use strict";
 
 
 const { redirectStatusSet, referrerPolicySet: referrerPolicyTokens, badPortsSet } = __nccwpck_require__(7326)
@@ -23252,7 +23185,6 @@ module.exports = {
 /***/ 4222:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-"use strict";
 
 
 const { types } = __nccwpck_require__(9023)
@@ -23906,7 +23838,6 @@ module.exports = {
 /***/ 396:
 /***/ ((module) => {
 
-"use strict";
 
 
 /**
@@ -24204,7 +24135,6 @@ module.exports = {
 /***/ 2160:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-"use strict";
 
 
 const {
@@ -24556,7 +24486,6 @@ module.exports = {
 /***/ 5976:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-"use strict";
 
 
 const { webidl } = __nccwpck_require__(4222)
@@ -24642,7 +24571,6 @@ module.exports = {
 /***/ 6812:
 /***/ ((module) => {
 
-"use strict";
 
 
 module.exports = {
@@ -24660,7 +24588,6 @@ module.exports = {
 /***/ 165:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-"use strict";
 
 
 const {
@@ -25060,7 +24987,6 @@ module.exports = {
 /***/ 2581:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-"use strict";
 
 
 // We include a version number for the Dispatcher API. In case of breaking changes,
@@ -25100,7 +25026,6 @@ module.exports = {
 /***/ 8840:
 /***/ ((module) => {
 
-"use strict";
 
 
 module.exports = class DecoratorHandler {
@@ -25143,7 +25068,6 @@ module.exports = class DecoratorHandler {
 /***/ 8299:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-"use strict";
 
 
 const util = __nccwpck_require__(3440)
@@ -25715,7 +25639,6 @@ module.exports = RetryHandler
 /***/ 4415:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-"use strict";
 
 
 const RedirectHandler = __nccwpck_require__(8299)
@@ -25744,7 +25667,6 @@ module.exports = createRedirectInterceptor
 /***/ 2824:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
-"use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.SPECIAL_HEADERS = exports.HEADER_STATE = exports.MINOR = exports.MAJOR = exports.CONNECTION_TOKEN_CHARS = exports.HEADER_CHARS = exports.TOKEN = exports.STRICT_TOKEN = exports.HEX = exports.URL_CHAR = exports.STRICT_URL_CHAR = exports.USERINFO_CHARS = exports.MARK = exports.ALPHANUM = exports.NUM = exports.HEX_MAP = exports.NUM_MAP = exports.ALPHA = exports.FINISH = exports.H_METHOD_MAP = exports.METHOD_MAP = exports.METHODS_RTSP = exports.METHODS_ICE = exports.METHODS_HTTP = exports.METHODS = exports.LENIENT_FLAGS = exports.FLAGS = exports.TYPE = exports.ERROR = void 0;
@@ -26045,7 +25967,6 @@ module.exports = 'AGFzbQEAAAABMAhgAX8Bf2ADf39/AX9gBH9/f38Bf2AAAGADf39/AGABfwBgAn
 /***/ 172:
 /***/ ((__unused_webpack_module, exports) => {
 
-"use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.enumToMap = void 0;
@@ -26067,7 +25988,6 @@ exports.enumToMap = enumToMap;
 /***/ 7501:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-"use strict";
 
 
 const { kClients } = __nccwpck_require__(6443)
@@ -26246,7 +26166,6 @@ module.exports = MockAgent
 /***/ 7365:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-"use strict";
 
 
 const { promisify } = __nccwpck_require__(9023)
@@ -26313,7 +26232,6 @@ module.exports = MockClient
 /***/ 2429:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-"use strict";
 
 
 const { UndiciError } = __nccwpck_require__(8707)
@@ -26338,7 +26256,6 @@ module.exports = {
 /***/ 1511:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-"use strict";
 
 
 const { getResponseData, buildKey, addMockDispatch } = __nccwpck_require__(3397)
@@ -26552,7 +26469,6 @@ module.exports.MockScope = MockScope
 /***/ 4004:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-"use strict";
 
 
 const { promisify } = __nccwpck_require__(9023)
@@ -26619,7 +26535,6 @@ module.exports = MockPool
 /***/ 1117:
 /***/ ((module) => {
 
-"use strict";
 
 
 module.exports = {
@@ -26650,7 +26565,6 @@ module.exports = {
 /***/ 3397:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-"use strict";
 
 
 const { MockNotMatchedError } = __nccwpck_require__(2429)
@@ -27009,7 +26923,6 @@ module.exports = {
 /***/ 6142:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-"use strict";
 
 
 const { Transform } = __nccwpck_require__(2203)
@@ -27057,7 +26970,6 @@ module.exports = class PendingInterceptorsFormatter {
 /***/ 1529:
 /***/ ((module) => {
 
-"use strict";
 
 
 const singulars = {
@@ -27094,7 +27006,6 @@ module.exports = class Pluralizer {
 /***/ 4869:
 /***/ ((module) => {
 
-"use strict";
 /* eslint-disable */
 
 
@@ -27219,7 +27130,6 @@ module.exports = class FixedQueue {
 /***/ 8640:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-"use strict";
 
 
 const DispatcherBase = __nccwpck_require__(1)
@@ -27462,7 +27372,6 @@ module.exports = PoolStats
 /***/ 5076:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-"use strict";
 
 
 const {
@@ -27578,7 +27487,6 @@ module.exports = Pool
 /***/ 2720:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-"use strict";
 
 
 const { kProxy, kClose, kDestroy, kInterceptors } = __nccwpck_require__(6443)
@@ -27775,7 +27683,6 @@ module.exports = ProxyAgent
 /***/ 8804:
 /***/ ((module) => {
 
-"use strict";
 
 
 let fastNow = Date.now()
@@ -27880,7 +27787,6 @@ module.exports = {
 /***/ 8550:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-"use strict";
 
 
 const diagnosticsChannel = __nccwpck_require__(1637)
@@ -28179,7 +28085,6 @@ module.exports = {
 /***/ 5913:
 /***/ ((module) => {
 
-"use strict";
 
 
 // This is a Globally Unique Identifier unique used
@@ -28238,7 +28143,6 @@ module.exports = {
 /***/ 6255:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-"use strict";
 
 
 const { webidl } = __nccwpck_require__(4222)
@@ -28549,7 +28453,6 @@ module.exports = {
 /***/ 1237:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-"use strict";
 
 
 const { maxUnsigned16Bit } = __nccwpck_require__(5913)
@@ -28630,7 +28533,6 @@ module.exports = {
 /***/ 3171:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-"use strict";
 
 
 const { Writable } = __nccwpck_require__(2203)
@@ -28982,7 +28884,6 @@ module.exports = {
 /***/ 2933:
 /***/ ((module) => {
 
-"use strict";
 
 
 module.exports = {
@@ -29002,7 +28903,6 @@ module.exports = {
 /***/ 3574:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-"use strict";
 
 
 const { kReadyState, kController, kResponse, kBinaryType, kWebSocketURL } = __nccwpck_require__(2933)
@@ -29210,7 +29110,6 @@ module.exports = {
 /***/ 5171:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-"use strict";
 
 
 const { webidl } = __nccwpck_require__(4222)
@@ -29859,7 +29758,6 @@ module.exports = {
 /***/ 3843:
 /***/ ((__unused_webpack_module, exports) => {
 
-"use strict";
 
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
@@ -29922,1360 +29820,226 @@ function wrappy (fn, cb) {
 
 /***/ }),
 
-/***/ 788:
-/***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
-
-"use strict";
-
-var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    var desc = Object.getOwnPropertyDescriptor(m, k);
-    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
-      desc = { enumerable: true, get: function() { return m[k]; } };
-    }
-    Object.defineProperty(o, k2, desc);
-}) : (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    o[k2] = m[k];
-}));
-var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
-    Object.defineProperty(o, "default", { enumerable: true, value: v });
-}) : function(o, v) {
-    o["default"] = v;
-});
-var __importStar = (this && this.__importStar) || (function () {
-    var ownKeys = function(o) {
-        ownKeys = Object.getOwnPropertyNames || function (o) {
-            var ar = [];
-            for (var k in o) if (Object.prototype.hasOwnProperty.call(o, k)) ar[ar.length] = k;
-            return ar;
-        };
-        return ownKeys(o);
-    };
-    return function (mod) {
-        if (mod && mod.__esModule) return mod;
-        var result = {};
-        if (mod != null) for (var k = ownKeys(mod), i = 0; i < k.length; i++) if (k[i] !== "default") __createBinding(result, mod, k[i]);
-        __setModuleDefault(result, mod);
-        return result;
-    };
-})();
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.getInputs = getInputs;
-exports.getContext = getContext;
-exports.getOctokit = getOctokit;
-const core = __importStar(__nccwpck_require__(7484));
-const github = __importStar(__nccwpck_require__(3228));
-function getInputs() {
-    const githubToken = core.getInput("github-token", { required: true });
-    const projectOwner = core.getInput("project-owner", { required: true });
-    const projectNumber = parseInt(core.getInput("project-number", { required: true }), 10);
-    const tagsFieldName = core.getInput("tags-field-name", { required: true });
-    const vcListRaw = core.getInput("virtual-collaborators", { required: false });
-    const virtualCollaborators = vcListRaw
-        ? vcListRaw.split(",").map((s) => s.trim())
-        : undefined;
-    return {
-        githubToken,
-        projectOwner,
-        projectNumber,
-        tagsFieldName,
-        virtualCollaborators,
-    };
-}
-function getContext() {
-    return github.context;
-}
-function getOctokit() {
-    const inputs = getInputs();
-    return github.getOctokit(inputs.githubToken);
-}
-
-
-/***/ }),
-
-/***/ 4492:
-/***/ ((__unused_webpack_module, exports) => {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.updateTagStoreByContent = updateTagStoreByContent;
-exports.isNotifiableTags = isNotifiableTags;
-exports.getWatchingVCNames = getWatchingVCNames;
-exports.extractValuesByType = extractValuesByType;
-exports.extractValueByType = extractValueByType;
-async function updateTagStoreByContent(tagStore, issueNumber, title, body, isComment = false) {
-    // Process Headers
-    let author = null;
-    const headerRegex = /^(?:\s*\n)?######\s+authored\s+by\s+@#([\w-]+)/i;
-    const headerMatch = body.match(headerRegex);
-    if (headerMatch) {
-        author = headerMatch[1];
-        if (!isComment) {
-            // For issue bodies, set the author tag based on the header.
-            tagStore.removeTypes(issueNumber, ["author"]);
-            tagStore.addTags(issueNumber, [
-                `author:${author}`,
-                `participant:${author}`,
-            ]);
-        }
-    }
-    // Process Commands
-    const commandRegex = /^\/(\w+)(?:\s.*)?$/gm;
-    let commandMatch;
-    while ((commandMatch = commandRegex.exec(body)) !== null) {
-        const command = commandMatch[1];
-        const args = commandMatch[0].split(" ").slice(1);
-        await processCommand(tagStore, issueNumber, command, args, author);
-    }
-    // Process Mentions
-    let mentions = [];
-    const mentionRegex = /@#([\w-]+)/g;
-    let mentionMatch;
-    while ((mentionMatch = mentionRegex.exec(body)) !== null) {
-        const mentionedName = mentionMatch[1];
-        tagStore.removeTags(issueNumber, [`unwatcher:${mentionedName}`]);
-        tagStore.addTags(issueNumber, [`participant:${mentionedName}`]);
-        mentions.push(mentionedName);
-    }
-    return { author, mentions };
-}
-async function processCommand(tagStore, issueNumber, command, args, author) {
-    if (command === "assign") {
-        if (args.length === 1) {
-            const mentionRegex = /^@#([\w-]+)$/;
-            const assigneeMatch = args[0].match(mentionRegex);
-            if (assigneeMatch) {
-                const assignee = assigneeMatch[1];
-                tagStore.removeTags(issueNumber, [`unwatcher:${assignee}`]);
-                tagStore.removeTypes(issueNumber, ["assignee"]);
-                tagStore.addTags(issueNumber, [
-                    `assignee:${assignee}`,
-                    `participant:${assignee}`,
-                ]);
-            }
-        }
-    }
-    else if (command === "unassign") {
-        tagStore.removeTypes(issueNumber, ["assignee"]);
-    }
-    else if (command === "watch") {
-        if (author) {
-            tagStore.removeTags(issueNumber, [`unwatcher:${author}`]);
-            tagStore.addTags(issueNumber, [`watcher:${author}`]);
-        }
-    }
-    else if (command === "unwatch") {
-        if (author) {
-            tagStore.removeTags(issueNumber, [`watcher:${author}`]);
-            tagStore.addTags(issueNumber, [`unwatcher:${author}`]);
-        }
-    }
-}
-function isNotifiableTags(tags) {
-    return !tags.includes("system:quiet");
-}
-function getWatchingVCNames(tags) {
-    let watchers = new Set();
-    extractValuesByType(tags, "participant").forEach((vc) => watchers.add(vc));
-    extractValuesByType(tags, "watcher").forEach((vc) => watchers.add(vc));
-    extractValuesByType(tags, "unwatcher").forEach((vc) => watchers.delete(vc));
-    return Array.from(watchers).sort();
-}
-function extractValuesByType(tags, type) {
-    const result = [];
-    for (const tag of tags) {
-        if (tag.startsWith(`${type}:`)) {
-            result.push(tag.substring(`${type}:`.length));
-        }
-    }
-    return result;
-}
-function extractValueByType(tags, type) {
-    const result = extractValuesByType(tags, type);
-    return result.length > 0 ? result[0] : null;
-}
-
-
-/***/ }),
-
-/***/ 6584:
-/***/ ((__unused_webpack_module, exports) => {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.getProjectInfo = getProjectInfo;
-exports.getOrCreateProjectItem = getOrCreateProjectItem;
-exports.getProjectItemTextFieldByName = getProjectItemTextFieldByName;
-exports.updateTextField = updateTextField;
-exports.getIssueNodeId = getIssueNodeId;
-exports.getPRNodeId = getPRNodeId;
-exports.findNotificationIssue = findNotificationIssue;
-exports.createNotificationIssue = createNotificationIssue;
-exports.createIssueComment = createIssueComment;
-exports.deleteIssueComment = deleteIssueComment;
-exports.getPRNumberForCheckRun = getPRNumberForCheckRun;
-/**
- * Looks up a Project v2 by owner (org or user) and returns its ID and the target text field ID.
- */
-async function getProjectInfo(octokit, owner, projectNumber, tagsFieldName) {
-    // Try org first; fall back to user if it fails
-    let projectId;
-    let fieldId;
-    const findField = (project) => project.fields.nodes.find((n) => n.name === tagsFieldName)?.id;
-    try {
-        const result = await octokit.graphql(`
-      query($owner: String!, $number: Int!) {
-        organization(login: $owner) {
-          projectV2(number: $number) {
-            id
-            fields(first: 50) {
-              nodes { ... on ProjectV2FieldCommon { id name } }
-            }
-          }
-        }
-      }
-    `, { owner, number: projectNumber });
-        const project = result.organization?.projectV2;
-        if (project) {
-            projectId = project.id;
-            fieldId = findField(project);
-        }
-    }
-    catch {
-        // org lookup failed — retry as user
-    }
-    if (!projectId) {
-        const result = await octokit.graphql(`
-      query($owner: String!, $number: Int!) {
-        user(login: $owner) {
-          projectV2(number: $number) {
-            id
-            fields(first: 50) {
-              nodes { ... on ProjectV2FieldCommon { id name } }
-            }
-          }
-        }
-      }
-    `, { owner, number: projectNumber });
-        const project = result.user?.projectV2;
-        if (!project)
-            throw new Error(`Project #${projectNumber} not found for owner '${owner}'`);
-        projectId = project.id;
-        fieldId = findField(project);
-    }
-    if (!fieldId) {
-        throw new Error(`Tags field '${tagsFieldName}' not found in project #${projectNumber}`);
-    }
-    return { projectId, fieldId: fieldId };
-}
-/**
- * Looks up a Project item by content node ID (Issue or PR) and returns its item ID and raw tags field value.
- * Creates a new item if not found.
- */
-async function getOrCreateProjectItem(octokit, projectId, contentNodeId) {
-    const res = await octokit.graphql(`
-    mutation($projectId: ID!, $contentId: ID!) {
-      addProjectV2ItemById(input: { projectId: $projectId, contentId: $contentId }) {
-        item { id }
-      }
-    }
-    `, { projectId, contentId: contentNodeId });
-    return res.addProjectV2ItemById.item.id;
-}
-/**
- * Retrieves the raw text value of a text field on a Project item.
- * Returns an empty string if the field is not set.
- */
-async function getProjectItemTextFieldByName(octokit, itemId, fieldName) {
-    const res = await octokit.graphql(`
-    query($itemId: ID!, $fieldName: String!) {
-      node(id: $itemId) {
-        ... on ProjectV2Item {
-          fieldValueByName(name: $fieldName) {
-            ... on ProjectV2ItemFieldTextValue { text }
-          }
-        }
-      }
-    }
-    `, { itemId, fieldName });
-    return res.node?.fieldValueByName?.text ?? "";
-}
-/**
- * Updates a text field value on a Project item.
- */
-async function updateTextField(octokit, projectId, itemId, fieldId, value) {
-    await octokit.graphql(`
-    mutation($projectId: ID!, $itemId: ID!, $fieldId: ID!, $value: String!) {
-      updateProjectV2ItemFieldValue(input: {
-        projectId: $projectId
-        itemId: $itemId
-        fieldId: $fieldId
-        value: { text: $value }
-      }) { projectV2Item { id } }
-    }
-  `, { projectId, itemId, fieldId, value });
-}
-/**
- * Resolves the node ID for an Issue by its number.
- */
-async function getIssueNodeId(octokit, owner, repo, issueNumber) {
-    const { data } = await octokit.rest.issues.get({
-        owner,
-        repo,
-        issue_number: issueNumber,
-    });
-    return data.node_id;
-}
-/**
- * Resolves the node ID for a PR by its number.
- */
-async function getPRNodeId(octokit, owner, repo, prNumber) {
-    const { data } = await octokit.rest.pulls.get({
-        owner,
-        repo,
-        pull_number: prNumber,
-    });
-    return data.node_id;
-}
-//=============================================================================
-// Notification Issues
-//=============================================================================
-/**
- * Searches for a `[VC:notifications] @#name` Issue by title.
- * Returns null if not found.
- */
-async function findNotificationIssue(octokit, owner, repo, title) {
-    // Use the search API for exact title matching
-    // order by created date asc to find the oldest matching issue (in case of duplicates)
-    const query = `repo:${owner}/${repo} in:title "${title}" is:issue`;
-    const { data } = await octokit.rest.search.issuesAndPullRequests({
-        q: query,
-        per_page: 5,
-        sort: "created",
-        order: "asc",
-    });
-    const found = data.items.find((i) => i.title === title);
-    return found ? found.number : null;
-}
-/**
- * Creates the VC-dedicated Notification Issue and returns its number.
- */
-async function createNotificationIssue(octokit, owner, repo, title, vcName) {
-    const body = `This Issue is the dedicated notification inbox for **\`@#${vcName}\`**.\n\n` +
-        `It was created automatically by the GitHub Virtual Collaborators Action.\n` +
-        `Delete confirmed notification comments to keep the inbox tidy.`;
-    const { data } = await octokit.rest.issues.create({
-        owner,
-        repo,
-        title,
-        body,
-        state: "closed",
-    });
-    // Close the issue after creation
-    await octokit.rest.issues.update({
-        owner,
-        repo,
-        issue_number: data.number,
-        state: "closed",
-    });
-    return data.number;
-}
-/**
- * Adds a comment to the specified Issue.
- */
-async function createIssueComment(octokit, owner, repo, issueNumber, body) {
-    await octokit.rest.issues.createComment({
-        owner,
-        repo,
-        issue_number: issueNumber,
-        body,
-    });
-}
-/**
- * Deletes the specified comment.
- */
-async function deleteIssueComment(octokit, owner, repo, commentId) {
-    await octokit.rest.issues.deleteComment({
-        owner,
-        repo,
-        comment_id: commentId,
-    });
-}
-//=============================================================================
-// Check Runs
-//=============================================================================
-/**
- * Finds the PR number associated with the given head SHA.
- * Returns null if no PR is found.
- */
-async function getPRNumberForCheckRun(octokit, owner, repo, headSha) {
-    const { data } = await octokit.rest.pulls.list({
-        owner,
-        repo,
-        state: "open",
-        head: `${owner}:${headSha}`,
-        per_page: 1,
-    });
-    if (data.length > 0)
-        return data[0].number;
-    // Also check closed PRs
-    const { data: closed } = await octokit.rest.pulls.list({
-        owner,
-        repo,
-        state: "closed",
-        head: `${owner}:${headSha}`,
-        per_page: 1,
-    });
-    return closed.length > 0 ? closed[0].number : null;
-}
-
-
-/***/ }),
-
-/***/ 9814:
-/***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.IssueNotificationProvider = void 0;
-const client_1 = __nccwpck_require__(6584);
-class IssueNotificationProvider {
-    constructor(opts) {
-        this.issueCache = new Map();
-        this.opts = opts;
-    }
-    notificationIssueTitle(vcName) {
-        return `[VC:notifications] @#${vcName}`;
-    }
-    async findOrCreateNotificationIssue(vcName) {
-        const cached = this.issueCache.get(vcName);
-        if (cached !== undefined)
-            return cached;
-        const { octokit, owner, repo } = this.opts;
-        const title = this.notificationIssueTitle(vcName);
-        let issueNumber = await (0, client_1.findNotificationIssue)(octokit, owner, repo, title);
-        if (issueNumber === null) {
-            issueNumber = await (0, client_1.createNotificationIssue)(octokit, owner, repo, title, vcName);
-            // Mark newly created Notification Issues with a system tag so the action skips
-            // re-processing them and avoids infinite notification loops.
-            await this.opts.tagStore.addTags(issueNumber, ["system:quiet"]).commit();
-        }
-        this.issueCache.set(vcName, issueNumber);
-        return issueNumber;
-    }
-    /**
-     * Sends `notification` to the `to` VC.
-     * Finds or creates the VC's dedicated Notification Issue, then adds a comment.
-     */
-    async notify(to, payload) {
-        const { octokit, owner, repo } = this.opts;
-        const issueNumber = await this.findOrCreateNotificationIssue(to);
-        const body = this.buildNotificationBody(payload);
-        await (0, client_1.createIssueComment)(octokit, owner, repo, issueNumber, body);
-    }
-    buildNotificationBody(payload) {
-        let body = "";
-        for (const [key, value] of Object.entries(payload)) {
-            body += `* **${key}**: ${value}\n`;
-        }
-        return body;
-    }
-}
-exports.IssueNotificationProvider = IssueNotificationProvider;
-
-
-/***/ }),
-
-/***/ 5550:
-/***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.ProjectMetadataStore = void 0;
-const client_1 = __nccwpck_require__(6584);
-/**
- * Reads and writes Issue/PR metadata(tags) via GitHub Projects v2.
- */
-class ProjectMetadataStore {
-    constructor(opts) {
-        this.opts = opts;
-        this.commands = [];
-    }
-    setTags(issueNumber, tags) {
-        const command = { type: "setTags", issueNumber, tags };
-        this.commands.push(command);
-        return this;
-    }
-    addTags(issueNumber, tags) {
-        const command = { type: "addTags", issueNumber, tags };
-        this.commands.push(command);
-        return this;
-    }
-    removeTags(issueNumber, tags) {
-        const command = { type: "removeTags", issueNumber, tags };
-        this.commands.push(command);
-        return this;
-    }
-    removeTypes(issueNumber, types) {
-        const command = { type: "removeTypes", issueNumber, types };
-        this.commands.push(command);
-        return this;
-    }
-    async getTags(issueNumber) {
-        const { tagsRaw } = await this.getOrCreateItem(issueNumber);
-        let tags = new Set(this.parseTags(tagsRaw));
-        for (const command of this.commands) {
-            if (command.issueNumber !== issueNumber) {
-                continue;
-            }
-            if (command.type === "setTags") {
-                tags = new Set(command.tags);
-            }
-            else if (command.type === "addTags") {
-                command.tags.forEach((tag) => tags.add(tag));
-            }
-            else if (command.type === "removeTags") {
-                command.tags.forEach((tag) => tags.delete(tag));
-            }
-            else if (command.type === "removeTypes") {
-                command.types.forEach((type) => {
-                    for (const tag of tags) {
-                        if (tag.startsWith(`${type}:`)) {
-                            tags.delete(tag);
-                        }
-                    }
-                });
-            }
-        }
-        return Array.from(tags).sort();
-    }
-    async commit() {
-        const { projectId, fieldId } = await this.ensureProject();
-        const issueMap = {};
-        for (const command of this.commands) {
-            if (!issueMap[command.issueNumber]) {
-                const contentNodeId = await this.getContentNodeId(command.issueNumber);
-                const { itemId, tagsRaw } = await this.ensureItem(projectId, contentNodeId);
-                issueMap[command.issueNumber] = {
-                    itemId,
-                    tags: new Set(this.parseTags(tagsRaw)),
-                };
-            }
-            const { itemId, tags } = issueMap[command.issueNumber];
-            if (command.type === "setTags") {
-                issueMap[command.issueNumber].tags = new Set(command.tags);
-            }
-            else if (command.type === "addTags") {
-                command.tags.forEach((tag) => tags.add(tag));
-            }
-            else if (command.type === "removeTags") {
-                command.tags.forEach((tag) => tags.delete(tag));
-            }
-            else if (command.type === "removeTypes") {
-                command.types.forEach((type) => {
-                    for (const tag of tags) {
-                        if (tag.startsWith(`${type}:`)) {
-                            tags.delete(tag);
-                        }
-                    }
-                });
-            }
-        }
-        for (const issueNumber in issueMap) {
-            const { itemId, tags } = issueMap[issueNumber];
-            const rawTags = " " + Array.from(tags).sort().join(" ") + " ";
-            await (0, client_1.updateTextField)(this.opts.octokit, projectId, itemId, fieldId, rawTags);
-        }
-        this.commands = [];
-    }
-    async getOrCreateItem(issueNumber) {
-        const { projectId } = await this.ensureProject();
-        const contentNodeId = await this.getContentNodeId(issueNumber);
-        return this.ensureItem(projectId, contentNodeId);
-    }
-    async ensureProject() {
-        if (!this.projectId || !this.fieldId) {
-            const info = await (0, client_1.getProjectInfo)(this.opts.octokit, this.opts.projectOwner, this.opts.projectNumber, this.opts.tagsFieldName);
-            this.projectId = info.projectId;
-            this.fieldId = info.fieldId;
-        }
-        return { projectId: this.projectId, fieldId: this.fieldId };
-    }
-    async getContentNodeId(issueNumber) {
-        const { octokit, owner, repo } = this.opts;
-        return ((await (0, client_1.getIssueNodeId)(octokit, owner, repo, issueNumber)) ??
-            (await (0, client_1.getPRNodeId)(octokit, owner, repo, issueNumber)));
-    }
-    async ensureItem(projectId, contentNodeId) {
-        const itemId = await (0, client_1.getOrCreateProjectItem)(this.opts.octokit, projectId, contentNodeId);
-        const tagsRaw = await (0, client_1.getProjectItemTextFieldByName)(this.opts.octokit, itemId, this.opts.tagsFieldName);
-        return { itemId, tagsRaw };
-    }
-    parseTags(raw) {
-        if (!raw) {
-            return [];
-        }
-        return raw.trim().split(" ");
-    }
-}
-exports.ProjectMetadataStore = ProjectMetadataStore;
-
-
-/***/ }),
-
-/***/ 5389:
-/***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
-
-"use strict";
-
-var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    var desc = Object.getOwnPropertyDescriptor(m, k);
-    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
-      desc = { enumerable: true, get: function() { return m[k]; } };
-    }
-    Object.defineProperty(o, k2, desc);
-}) : (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    o[k2] = m[k];
-}));
-var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
-    Object.defineProperty(o, "default", { enumerable: true, value: v });
-}) : function(o, v) {
-    o["default"] = v;
-});
-var __importStar = (this && this.__importStar) || (function () {
-    var ownKeys = function(o) {
-        ownKeys = Object.getOwnPropertyNames || function (o) {
-            var ar = [];
-            for (var k in o) if (Object.prototype.hasOwnProperty.call(o, k)) ar[ar.length] = k;
-            return ar;
-        };
-        return ownKeys(o);
-    };
-    return function (mod) {
-        if (mod && mod.__esModule) return mod;
-        var result = {};
-        if (mod != null) for (var k = ownKeys(mod), i = 0; i < k.length; i++) if (k[i] !== "default") __createBinding(result, mod, k[i]);
-        __setModuleDefault(result, mod);
-        return result;
-    };
-})();
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.handleCheckRun = handleCheckRun;
-const core = __importStar(__nccwpck_require__(7484));
-const context_1 = __nccwpck_require__(788);
-const client_1 = __nccwpck_require__(6584);
-const shared_1 = __nccwpck_require__(8512);
-const tag_util_1 = __nccwpck_require__(4492);
-async function handleCheckRun() {
-    const ctx = (0, context_1.getContext)();
-    const octokit = (0, context_1.getOctokit)();
-    const { action, check_run: checkRun } = ctx.payload;
-    if (!action) {
-        core.warning("check_run: missing action");
-        return;
-    }
-    if (!checkRun) {
-        core.warning("check_run: missing check_run");
-        return;
-    }
-    if (action !== "completed") {
-        core.info(`handleCheckRun: action=${action} is not actionable, skipping`);
-        return;
-    }
-    const conclusion = checkRun.conclusion ?? "";
-    if (conclusion !== "failure" && conclusion !== "action_required") {
-        core.info(`handleCheckRun: conclusion=${conclusion} is not actionable, skipping`);
-        return;
-    }
-    const { owner, repo } = ctx.repo;
-    const headSha = checkRun.head_sha;
-    const prNumber = await (0, client_1.getPRNumberForCheckRun)(octokit, owner, repo, headSha);
-    if (prNumber === null) {
-        core.info(`handleCheckRun: no PR associated with sha ${headSha}, skipping`);
-        return;
-    }
-    const { data: pr } = await octokit.rest.pulls.get({
-        owner,
-        repo,
-        pull_number: prNumber,
-    });
-    core.info(`handleCheckRun: action=${action}, conclusion=${conclusion}, pr=#${pr.number}`);
-    const tagStore = (0, shared_1.getTagStore)();
-    const tags = await tagStore.getTags(pr.number);
-    if (!(0, tag_util_1.isNotifiableTags)(tags)) {
-        return;
-    }
-    const assignee = (0, tag_util_1.extractValueByType)(tags, "assignee");
-    const watchers = (0, tag_util_1.getWatchingVCNames)(tags);
-    if (watchers.length === 0) {
-        core.info("handleCheckRun: no watchers, skipping notification");
-        return;
-    }
-    const notifier = (0, shared_1.getNotifier)(tagStore);
-    for (const watcher of watchers) {
-        const payload = {};
-        payload["event"] =
-            conclusion === "failure" ? "`check_failed`" : "`check_action_required`";
-        payload["pr"] = `\`#${pr.number}\`  ${pr.title}`;
-        payload["check"] = checkRun.name;
-        if (checkRun.details_url)
-            payload["details_url"] = checkRun.details_url;
-        if (watcher === assignee)
-            payload["assignee"] = true;
-        await notifier.notify(watcher, payload);
-    }
-}
-
-
-/***/ }),
-
-/***/ 7250:
-/***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
-
-"use strict";
-
-var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    var desc = Object.getOwnPropertyDescriptor(m, k);
-    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
-      desc = { enumerable: true, get: function() { return m[k]; } };
-    }
-    Object.defineProperty(o, k2, desc);
-}) : (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    o[k2] = m[k];
-}));
-var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
-    Object.defineProperty(o, "default", { enumerable: true, value: v });
-}) : function(o, v) {
-    o["default"] = v;
-});
-var __importStar = (this && this.__importStar) || (function () {
-    var ownKeys = function(o) {
-        ownKeys = Object.getOwnPropertyNames || function (o) {
-            var ar = [];
-            for (var k in o) if (Object.prototype.hasOwnProperty.call(o, k)) ar[ar.length] = k;
-            return ar;
-        };
-        return ownKeys(o);
-    };
-    return function (mod) {
-        if (mod && mod.__esModule) return mod;
-        var result = {};
-        if (mod != null) for (var k = ownKeys(mod), i = 0; i < k.length; i++) if (k[i] !== "default") __createBinding(result, mod, k[i]);
-        __setModuleDefault(result, mod);
-        return result;
-    };
-})();
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.handleIssueComment = handleIssueComment;
-const core = __importStar(__nccwpck_require__(7484));
-const tag_util_1 = __nccwpck_require__(4492);
-const context_1 = __nccwpck_require__(788);
-const shared_1 = __nccwpck_require__(8512);
-async function handleIssueComment() {
-    const ctx = (0, context_1.getContext)();
-    const { action, issue, comment } = ctx.payload;
-    if (!action) {
-        core.warning("issue_comment: missing action");
-        return;
-    }
-    if (!issue) {
-        core.warning("issue_comment: missing issue");
-        return;
-    }
-    if (!comment) {
-        core.warning("issue_comment: missing comment");
-        return;
-    }
-    core.info(`handleIssueComment: action=${action}, issue=#${issue.number}, comment=${comment.id}`);
-    const tagStore = (0, shared_1.getTagStore)();
-    let author = null;
-    let mentions = [];
-    if (action === "created" || action === "edited") {
-        const result = await (0, tag_util_1.updateTagStoreByContent)(tagStore, issue.number, "", comment.body ?? "", true);
-        author = result.author;
-        mentions = result.mentions;
-        await tagStore.commit();
-    }
-    const tags = await tagStore.getTags(issue.number);
-    if ((0, tag_util_1.isNotifiableTags)(tags)) {
-        const assignee = (0, tag_util_1.extractValueByType)(tags, "assignee");
-        const watchers = (0, tag_util_1.getWatchingVCNames)(tags);
-        const notifier = (0, shared_1.getNotifier)(tagStore);
-        for (const watcher of watchers) {
-            // Skip notifying the authoring user to avoid redundant notifications.
-            if (watcher === author) {
-                continue;
-            }
-            const payload = {};
-            payload['event'] = `\`comment_${action}\``;
-            payload['issue'] = `\`#${issue.number}\`  ${issue.title}`;
-            payload['comment_id'] = comment.id;
-            if (mentions.includes(watcher))
-                payload["mention"] = true;
-            if (watcher === assignee)
-                payload["assignee"] = true;
-            await notifier.notify(watcher, payload);
-        }
-    }
-}
-
-
-/***/ }),
-
-/***/ 8037:
-/***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
-
-"use strict";
-
-var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    var desc = Object.getOwnPropertyDescriptor(m, k);
-    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
-      desc = { enumerable: true, get: function() { return m[k]; } };
-    }
-    Object.defineProperty(o, k2, desc);
-}) : (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    o[k2] = m[k];
-}));
-var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
-    Object.defineProperty(o, "default", { enumerable: true, value: v });
-}) : function(o, v) {
-    o["default"] = v;
-});
-var __importStar = (this && this.__importStar) || (function () {
-    var ownKeys = function(o) {
-        ownKeys = Object.getOwnPropertyNames || function (o) {
-            var ar = [];
-            for (var k in o) if (Object.prototype.hasOwnProperty.call(o, k)) ar[ar.length] = k;
-            return ar;
-        };
-        return ownKeys(o);
-    };
-    return function (mod) {
-        if (mod && mod.__esModule) return mod;
-        var result = {};
-        if (mod != null) for (var k = ownKeys(mod), i = 0; i < k.length; i++) if (k[i] !== "default") __createBinding(result, mod, k[i]);
-        __setModuleDefault(result, mod);
-        return result;
-    };
-})();
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.handleIssues = handleIssues;
-const core = __importStar(__nccwpck_require__(7484));
-const tag_util_1 = __nccwpck_require__(4492);
-const context_1 = __nccwpck_require__(788);
-const shared_1 = __nccwpck_require__(8512);
-async function handleIssues() {
-    const ctx = (0, context_1.getContext)();
-    const { action, issue } = ctx.payload;
-    if (!action) {
-        core.warning("issues: missing action");
-        return;
-    }
-    if (!issue) {
-        core.warning("issues: missing issue");
-        return;
-    }
-    core.info(`handleIssues: action=${action}, issue=#${issue.number}`);
-    const tagStore = (0, shared_1.getTagStore)();
-    let author = null;
-    let mentions = [];
-    if (action === "opened" || action === "edited") {
-        const result = await (0, tag_util_1.updateTagStoreByContent)(tagStore, issue.number, issue.title, issue.body ?? "");
-        author = result.author;
-        mentions = result.mentions;
-        await tagStore.commit();
-    }
-    const tags = await tagStore.getTags(issue.number);
-    if ((0, tag_util_1.isNotifiableTags)(tags)) {
-        const assignee = (0, tag_util_1.extractValueByType)(tags, "assignee");
-        const watchers = (0, tag_util_1.getWatchingVCNames)(tags);
-        const notifier = (0, shared_1.getNotifier)(tagStore);
-        for (const watcher of watchers) {
-            // Skip notifying the authoring user to avoid redundant notifications.
-            if (watcher === author) {
-                continue;
-            }
-            const payload = {};
-            payload["event"] = `\`issue_${action}\``;
-            payload["issue"] = `\`#${issue.number}\`  ${issue.title}`;
-            if (mentions.includes(watcher))
-                payload["mention"] = true;
-            if (watcher === assignee)
-                payload["assignee"] = true;
-            await notifier.notify(watcher, payload);
-        }
-    }
-}
-
-
-/***/ }),
-
-/***/ 9998:
-/***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
-
-"use strict";
-
-var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    var desc = Object.getOwnPropertyDescriptor(m, k);
-    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
-      desc = { enumerable: true, get: function() { return m[k]; } };
-    }
-    Object.defineProperty(o, k2, desc);
-}) : (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    o[k2] = m[k];
-}));
-var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
-    Object.defineProperty(o, "default", { enumerable: true, value: v });
-}) : function(o, v) {
-    o["default"] = v;
-});
-var __importStar = (this && this.__importStar) || (function () {
-    var ownKeys = function(o) {
-        ownKeys = Object.getOwnPropertyNames || function (o) {
-            var ar = [];
-            for (var k in o) if (Object.prototype.hasOwnProperty.call(o, k)) ar[ar.length] = k;
-            return ar;
-        };
-        return ownKeys(o);
-    };
-    return function (mod) {
-        if (mod && mod.__esModule) return mod;
-        var result = {};
-        if (mod != null) for (var k = ownKeys(mod), i = 0; i < k.length; i++) if (k[i] !== "default") __createBinding(result, mod, k[i]);
-        __setModuleDefault(result, mod);
-        return result;
-    };
-})();
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.handlePullRequest = handlePullRequest;
-const core = __importStar(__nccwpck_require__(7484));
-const tag_util_1 = __nccwpck_require__(4492);
-const context_1 = __nccwpck_require__(788);
-const shared_1 = __nccwpck_require__(8512);
-async function handlePullRequest() {
-    const ctx = (0, context_1.getContext)();
-    const { action, pull_request: pr } = ctx.payload;
-    if (!action) {
-        core.warning("pull_request: missing action");
-        return;
-    }
-    if (!pr) {
-        core.warning("pull_request: missing pull_request");
-        return;
-    }
-    core.info(`handlePullRequest: action=${action}, pr=#${pr.number}`);
-    const tagStore = (0, shared_1.getTagStore)();
-    let author = null;
-    let mentions = [];
-    if (action === "opened" || action === "edited") {
-        const result = await (0, tag_util_1.updateTagStoreByContent)(tagStore, pr.number, pr.title, pr.body ?? "");
-        author = result.author;
-        mentions = result.mentions;
-        await tagStore.commit();
-    }
-    const tags = await tagStore.getTags(pr.number);
-    if ((0, tag_util_1.isNotifiableTags)(tags)) {
-        const assignee = (0, tag_util_1.extractValueByType)(tags, "assignee");
-        const watchers = (0, tag_util_1.getWatchingVCNames)(tags);
-        const notifier = (0, shared_1.getNotifier)(tagStore);
-        for (const watcher of watchers) {
-            // Skip notifying the authoring user to avoid redundant notifications.
-            if (watcher === author) {
-                continue;
-            }
-            const payload = {};
-            payload["event"] = `\`pr_${action}\``;
-            payload["issue"] = `\`#${pr.number}\`  ${pr.title}`;
-            if (action === "closed" && pr.merged) {
-                payload["event"] = "`pr_merged`";
-            }
-            if (mentions.includes(watcher))
-                payload["mention"] = true;
-            if (watcher === assignee)
-                payload["assignee"] = true;
-            await notifier.notify(watcher, payload);
-        }
-    }
-}
-
-
-/***/ }),
-
-/***/ 8512:
-/***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.getTagStore = getTagStore;
-exports.getNotifier = getNotifier;
-const context_1 = __nccwpck_require__(788);
-const project_metadata_store_1 = __nccwpck_require__(5550);
-const issue_notification_provider_1 = __nccwpck_require__(9814);
-function getTagStore() {
-    const ctx = (0, context_1.getContext)();
-    const inputs = (0, context_1.getInputs)();
-    const octokit = (0, context_1.getOctokit)();
-    return new project_metadata_store_1.ProjectMetadataStore({
-        octokit,
-        owner: ctx.repo.owner,
-        repo: ctx.repo.repo,
-        projectOwner: inputs.projectOwner,
-        projectNumber: inputs.projectNumber,
-        tagsFieldName: inputs.tagsFieldName,
-    });
-}
-function getNotifier(tagStore) {
-    const ctx = (0, context_1.getContext)();
-    const inputs = (0, context_1.getInputs)();
-    const octokit = (0, context_1.getOctokit)();
-    return new issue_notification_provider_1.IssueNotificationProvider({
-        octokit,
-        owner: ctx.repo.owner,
-        repo: ctx.repo.repo,
-        tagStore,
-    });
-}
-
-
-/***/ }),
-
-/***/ 9407:
-/***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
-
-"use strict";
-
-var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    var desc = Object.getOwnPropertyDescriptor(m, k);
-    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
-      desc = { enumerable: true, get: function() { return m[k]; } };
-    }
-    Object.defineProperty(o, k2, desc);
-}) : (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    o[k2] = m[k];
-}));
-var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
-    Object.defineProperty(o, "default", { enumerable: true, value: v });
-}) : function(o, v) {
-    o["default"] = v;
-});
-var __importStar = (this && this.__importStar) || (function () {
-    var ownKeys = function(o) {
-        ownKeys = Object.getOwnPropertyNames || function (o) {
-            var ar = [];
-            for (var k in o) if (Object.prototype.hasOwnProperty.call(o, k)) ar[ar.length] = k;
-            return ar;
-        };
-        return ownKeys(o);
-    };
-    return function (mod) {
-        if (mod && mod.__esModule) return mod;
-        var result = {};
-        if (mod != null) for (var k = ownKeys(mod), i = 0; i < k.length; i++) if (k[i] !== "default") __createBinding(result, mod, k[i]);
-        __setModuleDefault(result, mod);
-        return result;
-    };
-})();
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-const core = __importStar(__nccwpck_require__(7484));
-const context_1 = __nccwpck_require__(788);
-const check_run_1 = __nccwpck_require__(5389);
-const issues_1 = __nccwpck_require__(8037);
-const issue_comment_1 = __nccwpck_require__(7250);
-const pull_request_1 = __nccwpck_require__(9998);
-async function run() {
-    const ctx = (0, context_1.getContext)();
-    switch (ctx.eventName) {
-        case "check_run":
-            await (0, check_run_1.handleCheckRun)();
-            break;
-        case "issues":
-            await (0, issues_1.handleIssues)();
-            break;
-        case "issue_comment":
-            await (0, issue_comment_1.handleIssueComment)();
-            break;
-        case "pull_request":
-            await (0, pull_request_1.handlePullRequest)();
-            break;
-        default:
-            core.warning(`Unsupported event: ${ctx.eventName}`);
-    }
-}
-run().catch((err) => {
-    core.setFailed(err instanceof Error ? err.message : String(err));
-});
-
-
-/***/ }),
-
 /***/ 2613:
 /***/ ((module) => {
 
-"use strict";
-module.exports = require("assert");
+module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("assert");
 
 /***/ }),
 
 /***/ 290:
 /***/ ((module) => {
 
-"use strict";
-module.exports = require("async_hooks");
+module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("async_hooks");
 
 /***/ }),
 
 /***/ 181:
 /***/ ((module) => {
 
-"use strict";
-module.exports = require("buffer");
+module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("buffer");
 
 /***/ }),
 
 /***/ 5317:
 /***/ ((module) => {
 
-"use strict";
-module.exports = require("child_process");
+module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("child_process");
 
 /***/ }),
 
 /***/ 4236:
 /***/ ((module) => {
 
-"use strict";
-module.exports = require("console");
+module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("console");
 
 /***/ }),
 
 /***/ 6982:
 /***/ ((module) => {
 
-"use strict";
-module.exports = require("crypto");
+module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("crypto");
 
 /***/ }),
 
 /***/ 1637:
 /***/ ((module) => {
 
-"use strict";
-module.exports = require("diagnostics_channel");
+module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("diagnostics_channel");
 
 /***/ }),
 
 /***/ 4434:
 /***/ ((module) => {
 
-"use strict";
-module.exports = require("events");
+module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("events");
 
 /***/ }),
 
 /***/ 9896:
 /***/ ((module) => {
 
-"use strict";
-module.exports = require("fs");
+module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("fs");
 
 /***/ }),
 
 /***/ 8611:
 /***/ ((module) => {
 
-"use strict";
-module.exports = require("http");
+module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("http");
 
 /***/ }),
 
 /***/ 5675:
 /***/ ((module) => {
 
-"use strict";
-module.exports = require("http2");
+module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("http2");
 
 /***/ }),
 
 /***/ 5692:
 /***/ ((module) => {
 
-"use strict";
-module.exports = require("https");
+module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("https");
 
 /***/ }),
 
 /***/ 9278:
 /***/ ((module) => {
 
-"use strict";
-module.exports = require("net");
+module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("net");
 
 /***/ }),
 
 /***/ 7598:
 /***/ ((module) => {
 
-"use strict";
-module.exports = require("node:crypto");
+module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("node:crypto");
 
 /***/ }),
 
 /***/ 8474:
 /***/ ((module) => {
 
-"use strict";
-module.exports = require("node:events");
+module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("node:events");
 
 /***/ }),
 
 /***/ 7075:
 /***/ ((module) => {
 
-"use strict";
-module.exports = require("node:stream");
+module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("node:stream");
 
 /***/ }),
 
 /***/ 7975:
 /***/ ((module) => {
 
-"use strict";
-module.exports = require("node:util");
+module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("node:util");
 
 /***/ }),
 
 /***/ 857:
 /***/ ((module) => {
 
-"use strict";
-module.exports = require("os");
+module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("os");
 
 /***/ }),
 
 /***/ 6928:
 /***/ ((module) => {
 
-"use strict";
-module.exports = require("path");
+module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("path");
 
 /***/ }),
 
 /***/ 2987:
 /***/ ((module) => {
 
-"use strict";
-module.exports = require("perf_hooks");
+module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("perf_hooks");
 
 /***/ }),
 
 /***/ 3480:
 /***/ ((module) => {
 
-"use strict";
-module.exports = require("querystring");
+module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("querystring");
 
 /***/ }),
 
 /***/ 2203:
 /***/ ((module) => {
 
-"use strict";
-module.exports = require("stream");
+module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("stream");
 
 /***/ }),
 
 /***/ 3774:
 /***/ ((module) => {
 
-"use strict";
-module.exports = require("stream/web");
+module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("stream/web");
 
 /***/ }),
 
 /***/ 3193:
 /***/ ((module) => {
 
-"use strict";
-module.exports = require("string_decoder");
+module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("string_decoder");
 
 /***/ }),
 
 /***/ 3557:
 /***/ ((module) => {
 
-"use strict";
-module.exports = require("timers");
+module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("timers");
 
 /***/ }),
 
 /***/ 4756:
 /***/ ((module) => {
 
-"use strict";
-module.exports = require("tls");
+module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("tls");
 
 /***/ }),
 
 /***/ 7016:
 /***/ ((module) => {
 
-"use strict";
-module.exports = require("url");
+module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("url");
 
 /***/ }),
 
 /***/ 9023:
 /***/ ((module) => {
 
-"use strict";
-module.exports = require("util");
+module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("util");
 
 /***/ }),
 
 /***/ 8253:
 /***/ ((module) => {
 
-"use strict";
-module.exports = require("util/types");
+module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("util/types");
 
 /***/ }),
 
 /***/ 8167:
 /***/ ((module) => {
 
-"use strict";
-module.exports = require("worker_threads");
+module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("worker_threads");
 
 /***/ }),
 
 /***/ 3106:
 /***/ ((module) => {
 
-"use strict";
-module.exports = require("zlib");
+module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("zlib");
 
 /***/ }),
 
 /***/ 7182:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-"use strict";
 
 
 const WritableStream = (__nccwpck_require__(7075).Writable)
@@ -31496,7 +30260,6 @@ module.exports = Dicer
 /***/ 2271:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-"use strict";
 
 
 const EventEmitter = (__nccwpck_require__(8474).EventEmitter)
@@ -31604,7 +30367,6 @@ module.exports = HeaderParser
 /***/ 612:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-"use strict";
 
 
 const inherits = (__nccwpck_require__(7975).inherits)
@@ -31625,7 +30387,6 @@ module.exports = PartStream
 /***/ 4136:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-"use strict";
 
 
 /**
@@ -31861,7 +30622,6 @@ module.exports = SBMH
 /***/ 9581:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-"use strict";
 
 
 const WritableStream = (__nccwpck_require__(7075).Writable)
@@ -31954,7 +30714,6 @@ module.exports.Dicer = Dicer
 /***/ 1192:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-"use strict";
 
 
 // TODO:
@@ -32268,7 +31027,6 @@ module.exports = Multipart
 /***/ 855:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-"use strict";
 
 
 const Decoder = __nccwpck_require__(1496)
@@ -32466,7 +31224,6 @@ module.exports = UrlEncoded
 /***/ 1496:
 /***/ ((module) => {
 
-"use strict";
 
 
 const RE_PLUS = /\+/g
@@ -32528,7 +31285,6 @@ module.exports = Decoder
 /***/ 692:
 /***/ ((module) => {
 
-"use strict";
 
 
 module.exports = function basename (path) {
@@ -32550,7 +31306,6 @@ module.exports = function basename (path) {
 /***/ 2747:
 /***/ (function(module) {
 
-"use strict";
 
 
 // Node has always utf-8
@@ -32672,7 +31427,6 @@ module.exports = decodeText
 /***/ 2393:
 /***/ ((module) => {
 
-"use strict";
 
 
 module.exports = function getLimit (limits, name, defaultLimit) {
@@ -32696,7 +31450,6 @@ module.exports = function getLimit (limits, name, defaultLimit) {
 /***/ 8929:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-"use strict";
 /* eslint-disable object-property-newline */
 
 
@@ -32897,50 +31650,861 @@ module.exports = parseParams
 
 /***/ })
 
-/******/ 	});
+/******/ });
 /************************************************************************/
-/******/ 	// The module cache
-/******/ 	var __webpack_module_cache__ = {};
-/******/ 	
-/******/ 	// The require function
-/******/ 	function __nccwpck_require__(moduleId) {
-/******/ 		// Check if module is in cache
-/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
-/******/ 		if (cachedModule !== undefined) {
-/******/ 			return cachedModule.exports;
-/******/ 		}
-/******/ 		// Create a new module (and put it into the cache)
-/******/ 		var module = __webpack_module_cache__[moduleId] = {
-/******/ 			// no module.id needed
-/******/ 			// no module.loaded needed
-/******/ 			exports: {}
-/******/ 		};
-/******/ 	
-/******/ 		// Execute the module function
-/******/ 		var threw = true;
-/******/ 		try {
-/******/ 			__webpack_modules__[moduleId].call(module.exports, module, module.exports, __nccwpck_require__);
-/******/ 			threw = false;
-/******/ 		} finally {
-/******/ 			if(threw) delete __webpack_module_cache__[moduleId];
-/******/ 		}
-/******/ 	
-/******/ 		// Return the exports of the module
-/******/ 		return module.exports;
+/******/ // The module cache
+/******/ var __webpack_module_cache__ = {};
+/******/ 
+/******/ // The require function
+/******/ function __nccwpck_require__(moduleId) {
+/******/ 	// Check if module is in cache
+/******/ 	var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 	if (cachedModule !== undefined) {
+/******/ 		return cachedModule.exports;
 /******/ 	}
-/******/ 	
+/******/ 	// Create a new module (and put it into the cache)
+/******/ 	var module = __webpack_module_cache__[moduleId] = {
+/******/ 		// no module.id needed
+/******/ 		// no module.loaded needed
+/******/ 		exports: {}
+/******/ 	};
+/******/ 
+/******/ 	// Execute the module function
+/******/ 	var threw = true;
+/******/ 	try {
+/******/ 		__webpack_modules__[moduleId].call(module.exports, module, module.exports, __nccwpck_require__);
+/******/ 		threw = false;
+/******/ 	} finally {
+/******/ 		if(threw) delete __webpack_module_cache__[moduleId];
+/******/ 	}
+/******/ 
+/******/ 	// Return the exports of the module
+/******/ 	return module.exports;
+/******/ }
+/******/ 
 /************************************************************************/
-/******/ 	/* webpack/runtime/compat */
-/******/ 	
-/******/ 	if (typeof __nccwpck_require__ !== 'undefined') __nccwpck_require__.ab = __dirname + "/";
-/******/ 	
+/******/ /* webpack/runtime/compat */
+/******/ 
+/******/ if (typeof __nccwpck_require__ !== 'undefined') __nccwpck_require__.ab = new URL('.', import.meta.url).pathname.slice(import.meta.url.match(/^file:\/\/\/\w:/) ? 1 : 0, -1) + "/";
+/******/ 
 /************************************************************************/
-/******/ 	
-/******/ 	// startup
-/******/ 	// Load entry module and return exports
-/******/ 	// This entry module is referenced by other modules so it can't be inlined
-/******/ 	var __webpack_exports__ = __nccwpck_require__(9407);
-/******/ 	module.exports = __webpack_exports__;
-/******/ 	
-/******/ })()
-;
+var __webpack_exports__ = {};
+
+// EXTERNAL MODULE: ./node_modules/@actions/core/lib/core.js
+var core = __nccwpck_require__(7484);
+// EXTERNAL MODULE: ./node_modules/@actions/github/lib/github.js
+var github = __nccwpck_require__(3228);
+;// CONCATENATED MODULE: ./src/github/client.ts
+
+/**
+ * Looks up a Project v2 by owner (org or user) and returns its ID and the target text field ID.
+ */
+async function getProjectInfo(octokit, owner, projectNumber, tagsFieldName) {
+    // Try org first; fall back to user if it fails
+    let projectId;
+    let fieldId;
+    const findField = (project) => project.fields.nodes.find((n) => n.name === tagsFieldName)?.id;
+    try {
+        const result = await octokit.graphql(`
+      query($owner: String!, $number: Int!) {
+        organization(login: $owner) {
+          projectV2(number: $number) {
+            id
+            fields(first: 50) {
+              nodes { ... on ProjectV2FieldCommon { id name } }
+            }
+          }
+        }
+      }
+    `, { owner, number: projectNumber });
+        const project = result.organization?.projectV2;
+        if (project) {
+            projectId = project.id;
+            fieldId = findField(project);
+        }
+    }
+    catch {
+        // org lookup failed — retry as user
+    }
+    if (!projectId) {
+        const result = await octokit.graphql(`
+      query($owner: String!, $number: Int!) {
+        user(login: $owner) {
+          projectV2(number: $number) {
+            id
+            fields(first: 50) {
+              nodes { ... on ProjectV2FieldCommon { id name } }
+            }
+          }
+        }
+      }
+    `, { owner, number: projectNumber });
+        const project = result.user?.projectV2;
+        if (!project)
+            throw new Error(`Project #${projectNumber} not found for owner '${owner}'`);
+        projectId = project.id;
+        fieldId = findField(project);
+    }
+    if (!fieldId) {
+        throw new Error(`Tags field '${tagsFieldName}' not found in project #${projectNumber}`);
+    }
+    return { projectId, fieldId: fieldId };
+}
+/**
+ * Looks up a Project item by content node ID (Issue or PR) and returns its item ID and raw tags field value.
+ * Creates a new item if not found.
+ */
+async function getOrCreateProjectItem(octokit, projectId, contentNodeId) {
+    const res = await octokit.graphql(`
+    mutation($projectId: ID!, $contentId: ID!) {
+      addProjectV2ItemById(input: { projectId: $projectId, contentId: $contentId }) {
+        item { id }
+      }
+    }
+    `, { projectId, contentId: contentNodeId });
+    return res.addProjectV2ItemById.item.id;
+}
+/**
+ * Retrieves the raw text value of a text field on a Project item.
+ * Returns an empty string if the field is not set.
+ */
+async function getProjectItemTextFieldByName(octokit, itemId, fieldName) {
+    const res = await octokit.graphql(`
+    query($itemId: ID!, $fieldName: String!) {
+      node(id: $itemId) {
+        ... on ProjectV2Item {
+          fieldValueByName(name: $fieldName) {
+            ... on ProjectV2ItemFieldTextValue { text }
+          }
+        }
+      }
+    }
+    `, { itemId, fieldName });
+    return res.node?.fieldValueByName?.text ?? "";
+}
+/**
+ * Updates a text field value on a Project item.
+ */
+async function updateTextField(octokit, projectId, itemId, fieldId, value) {
+    await octokit.graphql(`
+    mutation($projectId: ID!, $itemId: ID!, $fieldId: ID!, $value: String!) {
+      updateProjectV2ItemFieldValue(input: {
+        projectId: $projectId
+        itemId: $itemId
+        fieldId: $fieldId
+        value: { text: $value }
+      }) { projectV2Item { id } }
+    }
+  `, { projectId, itemId, fieldId, value });
+}
+/**
+ * Resolves the node ID for an Issue by its number.
+ */
+async function getIssueNodeId(octokit, owner, repo, issueNumber) {
+    const { data } = await octokit.rest.issues.get({
+        owner,
+        repo,
+        issue_number: issueNumber,
+    });
+    return data.node_id;
+}
+/**
+ * Resolves the node ID for a PR by its number.
+ */
+async function getPRNodeId(octokit, owner, repo, prNumber) {
+    const { data } = await octokit.rest.pulls.get({
+        owner,
+        repo,
+        pull_number: prNumber,
+    });
+    return data.node_id;
+}
+//=============================================================================
+// Notification Issues
+//=============================================================================
+/**
+ * Searches for a `[VC:notifications] @#name` Issue by title.
+ * Returns null if not found.
+ */
+async function findNotificationIssue(octokit, owner, repo, title) {
+    // Use the search API for exact title matching
+    // order by created date asc to find the oldest matching issue (in case of duplicates)
+    const query = `repo:${owner}/${repo} in:title "${title}" is:issue`;
+    const { data } = await octokit.rest.search.issuesAndPullRequests({
+        q: query,
+        per_page: 5,
+        sort: "created",
+        order: "asc",
+    });
+    const found = data.items.find((i) => i.title === title);
+    return found ? found.number : null;
+}
+/**
+ * Creates the VC-dedicated Notification Issue and returns its number.
+ */
+async function createNotificationIssue(octokit, owner, repo, title, vcName) {
+    const body = `This Issue is the dedicated notification inbox for **\`@#${vcName}\`**.\n\n` +
+        `It was created automatically by the GitHub Virtual Collaborators Action.\n` +
+        `Delete confirmed notification comments to keep the inbox tidy.`;
+    const { data } = await octokit.rest.issues.create({
+        owner,
+        repo,
+        title,
+        body,
+        state: "closed",
+    });
+    // Close the issue after creation
+    await octokit.rest.issues.update({
+        owner,
+        repo,
+        issue_number: data.number,
+        state: "closed",
+    });
+    return data.number;
+}
+/**
+ * Adds a comment to the specified Issue.
+ */
+async function createIssueComment(octokit, owner, repo, issueNumber, body) {
+    await octokit.rest.issues.createComment({
+        owner,
+        repo,
+        issue_number: issueNumber,
+        body,
+    });
+}
+/**
+ * Deletes the specified comment.
+ */
+async function deleteIssueComment(octokit, owner, repo, commentId) {
+    await octokit.rest.issues.deleteComment({
+        owner,
+        repo,
+        comment_id: commentId,
+    });
+}
+//=============================================================================
+// Check Runs
+//=============================================================================
+/**
+ * Finds the PR number associated with the given head SHA.
+ * Returns null if no PR is found.
+ */
+async function getPRNumberForCheckRun(octokit, owner, repo, headSha) {
+    const { data } = await octokit.rest.pulls.list({
+        owner,
+        repo,
+        state: "open",
+        head: `${owner}:${headSha}`,
+        per_page: 1,
+    });
+    if (data.length > 0)
+        return data[0].number;
+    // Also check closed PRs
+    const { data: closed } = await octokit.rest.pulls.list({
+        owner,
+        repo,
+        state: "closed",
+        head: `${owner}:${headSha}`,
+        per_page: 1,
+    });
+    return closed.length > 0 ? closed[0].number : null;
+}
+
+;// CONCATENATED MODULE: ./src/github/project-metadata-store.ts
+
+/**
+ * Reads and writes Issue/PR metadata(tags) via GitHub Projects v2.
+ */
+class ProjectMetadataStore {
+    opts;
+    projectId;
+    fieldId;
+    commands;
+    constructor(opts) {
+        this.opts = opts;
+        this.commands = [];
+    }
+    setTags(issueNumber, tags) {
+        const command = { type: "setTags", issueNumber, tags };
+        this.commands.push(command);
+        return this;
+    }
+    addTags(issueNumber, tags) {
+        const command = { type: "addTags", issueNumber, tags };
+        this.commands.push(command);
+        return this;
+    }
+    removeTags(issueNumber, tags) {
+        const command = { type: "removeTags", issueNumber, tags };
+        this.commands.push(command);
+        return this;
+    }
+    removeTypes(issueNumber, types) {
+        const command = { type: "removeTypes", issueNumber, types };
+        this.commands.push(command);
+        return this;
+    }
+    async getTags(issueNumber) {
+        const { tagsRaw } = await this.getOrCreateItem(issueNumber);
+        let tags = new Set(this.parseTags(tagsRaw));
+        for (const command of this.commands) {
+            if (command.issueNumber !== issueNumber) {
+                continue;
+            }
+            if (command.type === "setTags") {
+                tags = new Set(command.tags);
+            }
+            else if (command.type === "addTags") {
+                command.tags.forEach((tag) => tags.add(tag));
+            }
+            else if (command.type === "removeTags") {
+                command.tags.forEach((tag) => tags.delete(tag));
+            }
+            else if (command.type === "removeTypes") {
+                command.types.forEach((type) => {
+                    for (const tag of tags) {
+                        if (tag.startsWith(`${type}:`)) {
+                            tags.delete(tag);
+                        }
+                    }
+                });
+            }
+        }
+        return Array.from(tags).sort();
+    }
+    async commit() {
+        const { projectId, fieldId } = await this.ensureProject();
+        const issueMap = {};
+        for (const command of this.commands) {
+            if (!issueMap[command.issueNumber]) {
+                const contentNodeId = await this.getContentNodeId(command.issueNumber);
+                const { itemId, tagsRaw } = await this.ensureItem(projectId, contentNodeId);
+                issueMap[command.issueNumber] = {
+                    itemId,
+                    tags: new Set(this.parseTags(tagsRaw)),
+                };
+            }
+            const { itemId, tags } = issueMap[command.issueNumber];
+            if (command.type === "setTags") {
+                issueMap[command.issueNumber].tags = new Set(command.tags);
+            }
+            else if (command.type === "addTags") {
+                command.tags.forEach((tag) => tags.add(tag));
+            }
+            else if (command.type === "removeTags") {
+                command.tags.forEach((tag) => tags.delete(tag));
+            }
+            else if (command.type === "removeTypes") {
+                command.types.forEach((type) => {
+                    for (const tag of tags) {
+                        if (tag.startsWith(`${type}:`)) {
+                            tags.delete(tag);
+                        }
+                    }
+                });
+            }
+        }
+        for (const issueNumber in issueMap) {
+            const { itemId, tags } = issueMap[issueNumber];
+            const rawTags = " " + Array.from(tags).sort().join(" ") + " ";
+            await updateTextField(this.opts.octokit, projectId, itemId, fieldId, rawTags);
+        }
+        this.commands = [];
+    }
+    async getOrCreateItem(issueNumber) {
+        const { projectId } = await this.ensureProject();
+        const contentNodeId = await this.getContentNodeId(issueNumber);
+        return this.ensureItem(projectId, contentNodeId);
+    }
+    async ensureProject() {
+        if (!this.projectId || !this.fieldId) {
+            const info = await getProjectInfo(this.opts.octokit, this.opts.projectOwner, this.opts.projectNumber, this.opts.tagsFieldName);
+            this.projectId = info.projectId;
+            this.fieldId = info.fieldId;
+        }
+        return { projectId: this.projectId, fieldId: this.fieldId };
+    }
+    async getContentNodeId(issueNumber) {
+        const { octokit, owner, repo } = this.opts;
+        return ((await getIssueNodeId(octokit, owner, repo, issueNumber)) ??
+            (await getPRNodeId(octokit, owner, repo, issueNumber)));
+    }
+    async ensureItem(projectId, contentNodeId) {
+        const itemId = await getOrCreateProjectItem(this.opts.octokit, projectId, contentNodeId);
+        const tagsRaw = await getProjectItemTextFieldByName(this.opts.octokit, itemId, this.opts.tagsFieldName);
+        return { itemId, tagsRaw };
+    }
+    parseTags(raw) {
+        if (!raw) {
+            return [];
+        }
+        return raw.trim().split(" ");
+    }
+}
+
+;// CONCATENATED MODULE: ./src/context.ts
+
+
+
+function getInputs() {
+    const githubToken = core.getInput("github-token", { required: true });
+    const projectOwner = core.getInput("project-owner", { required: true });
+    const projectNumber = parseInt(core.getInput("project-number", { required: true }), 10);
+    const tagsFieldName = core.getInput("tags-field-name", { required: true });
+    const vcListRaw = core.getInput("virtual-collaborators", { required: false });
+    const normalizedVCs = vcListRaw
+        ? Array.from(new Set(vcListRaw
+            .split(",")
+            .map((s) => s.trim())
+            .filter((s) => s.length > 0)))
+        : [];
+    const virtualCollaborators = normalizedVCs.length > 0 ? new Set(normalizedVCs) : undefined;
+    return {
+        githubToken,
+        projectOwner,
+        projectNumber,
+        tagsFieldName,
+        virtualCollaborators,
+    };
+}
+function getContext() {
+    return github.context;
+}
+function getOctokit() {
+    const inputs = getInputs();
+    return github.getOctokit(inputs.githubToken);
+}
+
+;// CONCATENATED MODULE: ./src/github/issue-notification-provider.ts
+
+class IssueNotificationProvider {
+    opts;
+    issueCache = new Map();
+    constructor(opts) {
+        this.opts = opts;
+    }
+    notificationIssueTitle(vcName) {
+        return `[VC:notifications] @#${vcName}`;
+    }
+    async findOrCreateNotificationIssue(vcName) {
+        const cached = this.issueCache.get(vcName);
+        if (cached !== undefined)
+            return cached;
+        const { octokit, owner, repo } = this.opts;
+        const title = this.notificationIssueTitle(vcName);
+        let issueNumber = await findNotificationIssue(octokit, owner, repo, title);
+        if (issueNumber === null) {
+            issueNumber = await createNotificationIssue(octokit, owner, repo, title, vcName);
+            // Mark newly created Notification Issues with a system tag so the action skips
+            // re-processing them and avoids infinite notification loops.
+            await this.opts.tagStore.addTags(issueNumber, ["system:quiet"]).commit();
+        }
+        this.issueCache.set(vcName, issueNumber);
+        return issueNumber;
+    }
+    /**
+     * Sends `notification` to the `to` VC.
+     * Finds or creates the VC's dedicated Notification Issue, then adds a comment.
+     */
+    async notify(to, payload) {
+        const { octokit, owner, repo } = this.opts;
+        const issueNumber = await this.findOrCreateNotificationIssue(to);
+        const body = this.buildNotificationBody(payload);
+        await createIssueComment(octokit, owner, repo, issueNumber, body);
+    }
+    buildNotificationBody(payload) {
+        let body = "";
+        for (const [key, value] of Object.entries(payload)) {
+            body += `* **${key}**: ${value}\n`;
+        }
+        return body;
+    }
+}
+
+;// CONCATENATED MODULE: ./src/handlers/shared.ts
+
+
+
+function getTagStore() {
+    const ctx = getContext();
+    const inputs = getInputs();
+    const octokit = getOctokit();
+    return new ProjectMetadataStore({
+        octokit,
+        owner: ctx.repo.owner,
+        repo: ctx.repo.repo,
+        projectOwner: inputs.projectOwner,
+        projectNumber: inputs.projectNumber,
+        tagsFieldName: inputs.tagsFieldName,
+    });
+}
+function getNotifier(tagStore) {
+    const ctx = getContext();
+    const inputs = getInputs();
+    const octokit = getOctokit();
+    return new IssueNotificationProvider({
+        octokit,
+        owner: ctx.repo.owner,
+        repo: ctx.repo.repo,
+        tagStore,
+    });
+}
+
+;// CONCATENATED MODULE: ./src/core/tag-util.ts
+function isAllowedVC(vcName, allowList) {
+    if (!allowList) {
+        return true;
+    }
+    return allowList.has(vcName);
+}
+async function updateTagStoreByContent(tagStore, issueNumber, title, body, isComment = false, allowList) {
+    // Process Headers
+    let author = null;
+    const headerRegex = /^(?:\s*\n)?######\s+authored\s+by\s+@#([\w-]+)/i;
+    const headerMatch = body.match(headerRegex);
+    if (headerMatch && isAllowedVC(headerMatch[1], allowList)) {
+        author = headerMatch[1];
+        if (!isComment) {
+            // For issue bodies, set the author tag based on the header.
+            tagStore.removeTypes(issueNumber, ["author"]);
+            tagStore.addTags(issueNumber, [
+                `author:${author}`,
+                `participant:${author}`,
+            ]);
+        }
+    }
+    // Process Commands
+    const commandRegex = /^\/(\w+)(?:\s.*)?$/gm;
+    let commandMatch;
+    while ((commandMatch = commandRegex.exec(body)) !== null) {
+        const command = commandMatch[1];
+        const args = commandMatch[0].split(" ").slice(1);
+        await processCommand(tagStore, issueNumber, command, args, author, allowList);
+    }
+    // Process Mentions
+    let mentions = [];
+    const mentionRegex = /@#([\w-]+)/g;
+    let mentionMatch;
+    while ((mentionMatch = mentionRegex.exec(body)) !== null) {
+        const mentionedName = mentionMatch[1];
+        if (!isAllowedVC(mentionedName, allowList)) {
+            continue;
+        }
+        tagStore.removeTags(issueNumber, [`unwatcher:${mentionedName}`]);
+        tagStore.addTags(issueNumber, [`participant:${mentionedName}`]);
+        mentions.push(mentionedName);
+    }
+    return { author, mentions };
+}
+async function processCommand(tagStore, issueNumber, command, args, author, allowList) {
+    if (command === "assign") {
+        if (args.length === 1) {
+            const mentionRegex = /^@#([\w-]+)$/;
+            const assigneeMatch = args[0].match(mentionRegex);
+            if (assigneeMatch) {
+                const assignee = assigneeMatch[1];
+                if (!isAllowedVC(assignee, allowList)) {
+                    return;
+                }
+                tagStore.removeTags(issueNumber, [`unwatcher:${assignee}`]);
+                tagStore.removeTypes(issueNumber, ["assignee"]);
+                tagStore.addTags(issueNumber, [
+                    `assignee:${assignee}`,
+                    `participant:${assignee}`,
+                ]);
+            }
+        }
+    }
+    else if (command === "unassign") {
+        tagStore.removeTypes(issueNumber, ["assignee"]);
+    }
+    else if (command === "watch") {
+        if (author) {
+            tagStore.removeTags(issueNumber, [`unwatcher:${author}`]);
+            tagStore.addTags(issueNumber, [`watcher:${author}`]);
+        }
+    }
+    else if (command === "unwatch") {
+        if (author) {
+            tagStore.removeTags(issueNumber, [`watcher:${author}`]);
+            tagStore.addTags(issueNumber, [`unwatcher:${author}`]);
+        }
+    }
+}
+function isNotifiableTags(tags) {
+    return !tags.includes("system:quiet");
+}
+function getWatchingVCNames(tags) {
+    let watchers = new Set();
+    extractValuesByType(tags, "participant").forEach((vc) => watchers.add(vc));
+    extractValuesByType(tags, "watcher").forEach((vc) => watchers.add(vc));
+    extractValuesByType(tags, "unwatcher").forEach((vc) => watchers.delete(vc));
+    return Array.from(watchers).sort();
+}
+function extractValuesByType(tags, type) {
+    const result = [];
+    for (const tag of tags) {
+        if (tag.startsWith(`${type}:`)) {
+            result.push(tag.substring(`${type}:`.length));
+        }
+    }
+    return result;
+}
+function extractValueByType(tags, type) {
+    const result = extractValuesByType(tags, type);
+    return result.length > 0 ? result[0] : null;
+}
+
+;// CONCATENATED MODULE: ./src/handlers/check-run.ts
+
+
+
+
+
+async function handleCheckRun() {
+    const ctx = getContext();
+    const inputs = getInputs();
+    const octokit = getOctokit();
+    const { action, check_run: checkRun } = ctx.payload;
+    if (!action) {
+        core.warning("check_run: missing action");
+        return;
+    }
+    if (!checkRun) {
+        core.warning("check_run: missing check_run");
+        return;
+    }
+    if (action !== "completed") {
+        core.info(`handleCheckRun: action=${action} is not actionable, skipping`);
+        return;
+    }
+    const conclusion = checkRun.conclusion ?? "";
+    if (conclusion !== "failure" && conclusion !== "action_required") {
+        core.info(`handleCheckRun: conclusion=${conclusion} is not actionable, skipping`);
+        return;
+    }
+    const { owner, repo } = ctx.repo;
+    const headSha = checkRun.head_sha;
+    const prNumber = await getPRNumberForCheckRun(octokit, owner, repo, headSha);
+    if (prNumber === null) {
+        core.info(`handleCheckRun: no PR associated with sha ${headSha}, skipping`);
+        return;
+    }
+    const { data: pr } = await octokit.rest.pulls.get({
+        owner,
+        repo,
+        pull_number: prNumber,
+    });
+    core.info(`handleCheckRun: action=${action}, conclusion=${conclusion}, pr=#${pr.number}`);
+    const tagStore = getTagStore();
+    const tags = await tagStore.getTags(pr.number);
+    if (!isNotifiableTags(tags)) {
+        return;
+    }
+    const assignee = extractValueByType(tags, "assignee");
+    const watchers = getWatchingVCNames(tags).filter((vc) => isAllowedVC(vc, inputs.virtualCollaborators));
+    if (watchers.length === 0) {
+        core.info("handleCheckRun: no watchers, skipping notification");
+        return;
+    }
+    const notifier = getNotifier(tagStore);
+    for (const watcher of watchers) {
+        const payload = {};
+        payload["event"] =
+            conclusion === "failure" ? "`check_failed`" : "`check_action_required`";
+        payload["pr"] = `\`#${pr.number}\`  ${pr.title}`;
+        payload["check"] = checkRun.name;
+        if (checkRun.details_url)
+            payload["details_url"] = checkRun.details_url;
+        if (watcher === assignee)
+            payload["assignee"] = true;
+        await notifier.notify(watcher, payload);
+    }
+}
+
+;// CONCATENATED MODULE: ./src/handlers/issues.ts
+
+
+
+
+async function handleIssues() {
+    const ctx = getContext();
+    const inputs = getInputs();
+    const { action, issue } = ctx.payload;
+    if (!action) {
+        core.warning("issues: missing action");
+        return;
+    }
+    if (!issue) {
+        core.warning("issues: missing issue");
+        return;
+    }
+    core.info(`handleIssues: action=${action}, issue=#${issue.number}`);
+    const tagStore = getTagStore();
+    let author = null;
+    let mentions = [];
+    if (action === "opened" || action === "edited") {
+        const result = await updateTagStoreByContent(tagStore, issue.number, issue.title, issue.body ?? "", false, inputs.virtualCollaborators);
+        author = result.author;
+        mentions = result.mentions;
+        await tagStore.commit();
+    }
+    const tags = await tagStore.getTags(issue.number);
+    if (isNotifiableTags(tags)) {
+        const assignee = extractValueByType(tags, "assignee");
+        const watchers = getWatchingVCNames(tags).filter((vc) => isAllowedVC(vc, inputs.virtualCollaborators));
+        const notifier = getNotifier(tagStore);
+        for (const watcher of watchers) {
+            // Skip notifying the authoring user to avoid redundant notifications.
+            if (watcher === author) {
+                continue;
+            }
+            const payload = {};
+            payload["event"] = `\`issue_${action}\``;
+            payload["issue"] = `\`#${issue.number}\`  ${issue.title}`;
+            if (mentions.includes(watcher))
+                payload["mention"] = true;
+            if (watcher === assignee)
+                payload["assignee"] = true;
+            await notifier.notify(watcher, payload);
+        }
+    }
+}
+
+;// CONCATENATED MODULE: ./src/handlers/issue-comment.ts
+
+
+
+
+async function handleIssueComment() {
+    const ctx = getContext();
+    const inputs = getInputs();
+    const { action, issue, comment } = ctx.payload;
+    if (!action) {
+        core.warning("issue_comment: missing action");
+        return;
+    }
+    if (!issue) {
+        core.warning("issue_comment: missing issue");
+        return;
+    }
+    if (!comment) {
+        core.warning("issue_comment: missing comment");
+        return;
+    }
+    core.info(`handleIssueComment: action=${action}, issue=#${issue.number}, comment=${comment.id}`);
+    const tagStore = getTagStore();
+    let author = null;
+    let mentions = [];
+    if (action === "created" || action === "edited") {
+        const result = await updateTagStoreByContent(tagStore, issue.number, "", comment.body ?? "", true, inputs.virtualCollaborators);
+        author = result.author;
+        mentions = result.mentions;
+        await tagStore.commit();
+    }
+    const tags = await tagStore.getTags(issue.number);
+    if (isNotifiableTags(tags)) {
+        const assignee = extractValueByType(tags, "assignee");
+        const watchers = getWatchingVCNames(tags).filter((vc) => isAllowedVC(vc, inputs.virtualCollaborators));
+        const notifier = getNotifier(tagStore);
+        for (const watcher of watchers) {
+            // Skip notifying the authoring user to avoid redundant notifications.
+            if (watcher === author) {
+                continue;
+            }
+            const payload = {};
+            payload["event"] = `\`comment_${action}\``;
+            payload["issue"] = `\`#${issue.number}\`  ${issue.title}`;
+            payload["comment_id"] = comment.id;
+            if (mentions.includes(watcher))
+                payload["mention"] = true;
+            if (watcher === assignee)
+                payload["assignee"] = true;
+            await notifier.notify(watcher, payload);
+        }
+    }
+}
+
+;// CONCATENATED MODULE: ./src/handlers/pull-request.ts
+
+
+
+
+async function handlePullRequest() {
+    const ctx = getContext();
+    const inputs = getInputs();
+    const { action, pull_request: pr } = ctx.payload;
+    if (!action) {
+        core.warning("pull_request: missing action");
+        return;
+    }
+    if (!pr) {
+        core.warning("pull_request: missing pull_request");
+        return;
+    }
+    core.info(`handlePullRequest: action=${action}, pr=#${pr.number}`);
+    const tagStore = getTagStore();
+    let author = null;
+    let mentions = [];
+    if (action === "opened" || action === "edited") {
+        const result = await updateTagStoreByContent(tagStore, pr.number, pr.title, pr.body ?? "", false, inputs.virtualCollaborators);
+        author = result.author;
+        mentions = result.mentions;
+        await tagStore.commit();
+    }
+    const tags = await tagStore.getTags(pr.number);
+    if (isNotifiableTags(tags)) {
+        const assignee = extractValueByType(tags, "assignee");
+        const watchers = getWatchingVCNames(tags).filter((vc) => isAllowedVC(vc, inputs.virtualCollaborators));
+        const notifier = getNotifier(tagStore);
+        for (const watcher of watchers) {
+            // Skip notifying the authoring user to avoid redundant notifications.
+            if (watcher === author) {
+                continue;
+            }
+            const payload = {};
+            payload["event"] = `\`pr_${action}\``;
+            payload["issue"] = `\`#${pr.number}\`  ${pr.title}`;
+            if (action === "closed" && pr.merged) {
+                payload["event"] = "`pr_merged`";
+            }
+            if (mentions.includes(watcher))
+                payload["mention"] = true;
+            if (watcher === assignee)
+                payload["assignee"] = true;
+            await notifier.notify(watcher, payload);
+        }
+    }
+}
+
+;// CONCATENATED MODULE: ./src/index.ts
+
+
+
+
+
+
+async function run() {
+    const ctx = getContext();
+    switch (ctx.eventName) {
+        case "check_run":
+            await handleCheckRun();
+            break;
+        case "issues":
+            await handleIssues();
+            break;
+        case "issue_comment":
+            await handleIssueComment();
+            break;
+        case "pull_request":
+            await handlePullRequest();
+            break;
+        default:
+            core.warning(`Unsupported event: ${ctx.eventName}`);
+    }
+}
+run().catch((err) => {
+    core.setFailed(err instanceof Error ? err.message : String(err));
+});
+
