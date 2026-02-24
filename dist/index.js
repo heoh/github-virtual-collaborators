@@ -31861,6 +31861,75 @@ __nccwpck_require__.d(constructs_namespaceObject, {
 var core = __nccwpck_require__(7484);
 // EXTERNAL MODULE: ./node_modules/@actions/github/lib/github.js
 var github = __nccwpck_require__(3228);
+;// CONCATENATED MODULE: ./src/context.ts
+
+
+function getInputs() {
+    const githubToken = core.getInput("github-token", { required: true });
+    const metadataBackend = (core.getInput("metadata-backend", {
+        required: false,
+    }) || "label");
+    const projectOwnerInput = core.getInput("project-owner", { required: false });
+    const projectNumberInput = core.getInput("project-number", {
+        required: false,
+    });
+    const tagsFieldNameInput = core.getInput("project-tags-field-name", {
+        required: false,
+    });
+    const metadataLabelPrefix = core.getInput("label-prefix", { required: false }) || "vc:";
+    const labelDefaultColor = core.getInput("label-default-color", { required: false }) || "8a8a8a";
+    const projectOwner = projectOwnerInput || github.context.repo.owner;
+    const projectNumber = projectNumberInput
+        ? parseInt(projectNumberInput, 10)
+        : undefined;
+    const tagsFieldName = tagsFieldNameInput || "Tags";
+    if (metadataBackend === "project") {
+        if (!projectOwnerInput) {
+            core.warning("metadata-backend=project without project-owner input. Falling back to repository owner.");
+        }
+        if (!projectNumberInput || Number.isNaN(projectNumber)) {
+            throw new Error("metadata-backend=project requires a valid 'project-number' input.");
+        }
+        if (!tagsFieldNameInput) {
+            core.warning("metadata-backend=project without project-tags-field-name input. Falling back to 'Tags'.");
+        }
+    }
+    if (metadataBackend !== "project" && metadataBackend !== "label") {
+        throw new Error(`Invalid metadata-backend '${metadataBackend}'. Expected 'project' or 'label'.`);
+    }
+    if (!metadataLabelPrefix.includes(":")) {
+        core.warning("label-prefix should include ':' for readability (e.g., 'vc:').");
+    }
+    if (!/^[0-9a-fA-F]{6}$/.test(labelDefaultColor)) {
+        throw new Error("label-default-color must be a 6-digit hex color without '#', e.g. '8a8a8a'.");
+    }
+    const vcListRaw = core.getInput("virtual-collaborators", { required: false });
+    const normalizedVCs = vcListRaw
+        ? Array.from(new Set(vcListRaw
+            .split(",")
+            .map((s) => s.trim())
+            .filter((s) => s.length > 0)))
+        : [];
+    const virtualCollaborators = normalizedVCs.length > 0 ? new Set(normalizedVCs) : undefined;
+    return {
+        githubToken,
+        metadataBackend,
+        projectOwner,
+        projectNumber,
+        tagsFieldName,
+        metadataLabelPrefix,
+        labelDefaultColor: labelDefaultColor.toLowerCase(),
+        virtualCollaborators,
+    };
+}
+function getContext() {
+    return github.context;
+}
+function getOctokit() {
+    const inputs = getInputs();
+    return github.getOctokit(inputs.githubToken);
+}
+
 ;// CONCATENATED MODULE: ./src/github/client.ts
 
 /**
@@ -32210,37 +32279,161 @@ class ProjectMetadataStore {
     }
 }
 
-;// CONCATENATED MODULE: ./src/context.ts
-
-
-
-function getInputs() {
-    const githubToken = core.getInput("github-token", { required: true });
-    const projectOwner = core.getInput("project-owner", { required: true });
-    const projectNumber = parseInt(core.getInput("project-number", { required: true }), 10);
-    const tagsFieldName = core.getInput("tags-field-name", { required: true });
-    const vcListRaw = core.getInput("virtual-collaborators", { required: false });
-    const normalizedVCs = vcListRaw
-        ? Array.from(new Set(vcListRaw
-            .split(",")
-            .map((s) => s.trim())
-            .filter((s) => s.length > 0)))
-        : [];
-    const virtualCollaborators = normalizedVCs.length > 0 ? new Set(normalizedVCs) : undefined;
-    return {
-        githubToken,
-        projectOwner,
-        projectNumber,
-        tagsFieldName,
-        virtualCollaborators,
-    };
-}
-function getContext() {
-    return github.context;
-}
-function getOctokit() {
-    const inputs = getInputs();
-    return github.getOctokit(inputs.githubToken);
+;// CONCATENATED MODULE: ./src/github/label-metadata-store.ts
+class LabelMetadataStore {
+    opts;
+    commands = [];
+    constructor(opts) {
+        this.opts = opts;
+    }
+    setTags(issueNumber, tags) {
+        this.commands.push({ type: "setTags", issueNumber, tags });
+        return this;
+    }
+    addTags(issueNumber, tags) {
+        this.commands.push({ type: "addTags", issueNumber, tags });
+        return this;
+    }
+    removeTags(issueNumber, tags) {
+        this.commands.push({ type: "removeTags", issueNumber, tags });
+        return this;
+    }
+    removeTypes(issueNumber, types) {
+        this.commands.push({ type: "removeTypes", issueNumber, types });
+        return this;
+    }
+    async getTags(issueNumber) {
+        let tags = new Set(await this.getCurrentTags(issueNumber));
+        for (const command of this.commands) {
+            if (command.issueNumber !== issueNumber)
+                continue;
+            tags = this.applyCommand(tags, command);
+        }
+        return Array.from(tags).sort();
+    }
+    async commit() {
+        const issueNumbers = Array.from(new Set(this.commands.map((c) => c.issueNumber)));
+        for (const issueNumber of issueNumbers) {
+            const originalTags = new Set(await this.getCurrentTags(issueNumber));
+            let nextTags = new Set(originalTags);
+            for (const command of this.commands) {
+                if (command.issueNumber !== issueNumber)
+                    continue;
+                nextTags = this.applyCommand(nextTags, command);
+            }
+            const toAdd = Array.from(nextTags).filter((tag) => !originalTags.has(tag));
+            const toRemove = Array.from(originalTags).filter((tag) => !nextTags.has(tag));
+            await this.removeLabels(issueNumber, toRemove);
+            await this.addLabels(issueNumber, toAdd);
+        }
+        this.commands.length = 0;
+    }
+    applyCommand(tags, command) {
+        const next = new Set(tags);
+        if (command.type === "setTags") {
+            return new Set(command.tags);
+        }
+        if (command.type === "addTags") {
+            command.tags.forEach((tag) => next.add(tag));
+            return next;
+        }
+        if (command.type === "removeTags") {
+            command.tags.forEach((tag) => next.delete(tag));
+            return next;
+        }
+        for (const type of command.types) {
+            for (const tag of next) {
+                if (tag.startsWith(`${type}:`)) {
+                    next.delete(tag);
+                }
+            }
+        }
+        return next;
+    }
+    get prefix() {
+        return this.opts.labelPrefix ?? "vc:";
+    }
+    get defaultColor() {
+        return this.opts.labelDefaultColor ?? "8a8a8a";
+    }
+    toLabel(tag) {
+        return `${this.prefix}${tag}`;
+    }
+    fromLabel(label) {
+        if (!label.startsWith(this.prefix))
+            return null;
+        return label.slice(this.prefix.length);
+    }
+    async getCurrentTags(issueNumber) {
+        const labels = await this.opts.octokit.paginate(this.opts.octokit.rest.issues.listLabelsOnIssue, {
+            owner: this.opts.owner,
+            repo: this.opts.repo,
+            issue_number: issueNumber,
+            per_page: 100,
+        });
+        const tags = [];
+        for (const label of labels) {
+            if (!label.name)
+                continue;
+            const tag = this.fromLabel(label.name);
+            if (tag)
+                tags.push(tag);
+        }
+        return tags;
+    }
+    async addLabels(issueNumber, tags) {
+        if (tags.length === 0)
+            return;
+        for (const tag of tags) {
+            await this.ensureLabelExists(this.toLabel(tag));
+        }
+        await this.opts.octokit.rest.issues.addLabels({
+            owner: this.opts.owner,
+            repo: this.opts.repo,
+            issue_number: issueNumber,
+            labels: tags.map((tag) => this.toLabel(tag)),
+        });
+    }
+    async removeLabels(issueNumber, tags) {
+        for (const tag of tags) {
+            try {
+                await this.opts.octokit.rest.issues.removeLabel({
+                    owner: this.opts.owner,
+                    repo: this.opts.repo,
+                    issue_number: issueNumber,
+                    name: this.toLabel(tag),
+                });
+            }
+            catch (error) {
+                const status = error.status;
+                if (status !== 404) {
+                    throw error;
+                }
+            }
+        }
+    }
+    async ensureLabelExists(labelName) {
+        try {
+            await this.opts.octokit.rest.issues.getLabel({
+                owner: this.opts.owner,
+                repo: this.opts.repo,
+                name: labelName,
+            });
+            return;
+        }
+        catch (error) {
+            const status = error.status;
+            if (status !== 404) {
+                throw error;
+            }
+        }
+        await this.opts.octokit.rest.issues.createLabel({
+            owner: this.opts.owner,
+            repo: this.opts.repo,
+            name: labelName,
+            color: this.defaultColor,
+        });
+    }
 }
 
 ;// CONCATENATED MODULE: ./src/github/issue-notification-provider.ts
@@ -32293,10 +32486,23 @@ class IssueNotificationProvider {
 
 
 
+
 function getTagStore() {
     const ctx = getContext();
     const inputs = getInputs();
     const octokit = getOctokit();
+    if (inputs.metadataBackend === "label") {
+        return new LabelMetadataStore({
+            octokit,
+            owner: ctx.repo.owner,
+            repo: ctx.repo.repo,
+            labelPrefix: inputs.metadataLabelPrefix,
+            labelDefaultColor: inputs.labelDefaultColor,
+        });
+    }
+    if (typeof inputs.projectNumber !== "number") {
+        throw new Error("metadata-backend=project requires a valid 'project-number' input.");
+    }
     return new ProjectMetadataStore({
         octokit,
         owner: ctx.repo.owner,
