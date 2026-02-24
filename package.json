@@ -2,10 +2,11 @@
   "name": "github-virtual-collaborators",
   "version": "1.0.0",
   "description": "GitHub Action for managing virtual collaborators via tags and notifications",
+  "type": "module",
   "main": "dist/index.js",
   "scripts": {
     "build": "rm -rf dist && ncc build src/index.ts -o dist",
-    "test": "jest",
+    "test": "node --experimental-vm-modules ./node_modules/jest/bin/jest.js",
     "lint": "tsc --noEmit"
   },
   "dependencies": {

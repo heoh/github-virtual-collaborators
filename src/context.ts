@@ -1,6 +1,6 @@
 import * as core from "@actions/core";
 import * as github from "@actions/github";
-import { ProjectMetadataStore } from "./github/project-metadata-store";
+import { ProjectMetadataStore } from "./github/project-metadata-store.js";
 
 export function getInputs() {
   const githubToken = core.getInput("github-token", { required: true });

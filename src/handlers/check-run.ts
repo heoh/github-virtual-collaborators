@@ -1,14 +1,14 @@
 import * as core from "@actions/core";
-import { getContext, getInputs, getOctokit } from "../context";
-import { getPRNumberForCheckRun } from "../github/client";
-import { getNotifier, getTagStore } from "./shared";
+import { getContext, getInputs, getOctokit } from "../context.js";
+import { getPRNumberForCheckRun } from "../github/client.js";
+import { getNotifier, getTagStore } from "./shared.js";
 import {
   extractValueByType,
   getWatchingVCNames,
   isAllowedVC,
   isNotifiableTags,
-} from "../core/tag-util";
-import { NotificationPayload } from "../core/notification-provider";
+} from "../core/tag-util.js";
+import type { NotificationPayload } from "../core/notification-provider.js";
 
 export async function handleCheckRun(): Promise<void> {
   const ctx = getContext();

@@ -1,7 +1,7 @@
-import { getContext, getInputs, getOctokit } from "../context";
-import type { TagStore } from "../core/tag-store";
-import { ProjectMetadataStore } from "../github/project-metadata-store";
-import { IssueNotificationProvider } from "../github/issue-notification-provider";
+import { getContext, getInputs, getOctokit } from "../context.js";
+import type { TagStore } from "../core/tag-store.js";
+import { ProjectMetadataStore } from "../github/project-metadata-store.js";
+import { IssueNotificationProvider } from "../github/issue-notification-provider.js";
 
 export function getTagStore() {
   const ctx = getContext();

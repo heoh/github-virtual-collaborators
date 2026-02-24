@@ -5,10 +5,10 @@ import {
   getWatchingVCNames,
   extractValueByType,
   isAllowedVC,
-} from "../core/tag-util";
-import { getContext, getInputs } from "../context";
-import { getTagStore, getNotifier } from "./shared";
-import { NotificationPayload } from "../core/notification-provider";
+} from "../core/tag-util.js";
+import { getContext, getInputs } from "../context.js";
+import { getTagStore, getNotifier } from "./shared.js";
+import type { NotificationPayload } from "../core/notification-provider.js";
 
 export async function handlePullRequest(): Promise<void> {
   const ctx = getContext();

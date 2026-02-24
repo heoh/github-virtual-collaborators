@@ -1,4 +1,4 @@
-import { TagStore } from "./tag-store";
+import type { TagStore } from "./tag-store.js";
 
 export function isAllowedVC(vcName: string, allowList?: Set<string>): boolean {
   if (!allowList) {

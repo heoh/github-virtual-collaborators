@@ -1,15 +1,15 @@
-import type { VCName } from "../types";
+import type { VCName } from "../types.js";
 import type {
   NotificationPayload,
   NotificationProvider,
-} from "../core/notification-provider";
-import type { TagStore } from "../core/tag-store";
-import type { Octokit } from "./client";
+} from "../core/notification-provider.js";
+import type { TagStore } from "../core/tag-store.js";
+import type { Octokit } from "./client.js";
 import {
   findNotificationIssue,
   createNotificationIssue,
   createIssueComment,
-} from "./client";
+} from "./client.js";
 
 export interface IssuesNotificationProviderOptions {
   octokit: Octokit;

@@ -1,9 +1,9 @@
 import * as core from "@actions/core";
-import { getContext } from "./context";
-import { handleCheckRun } from "./handlers/check-run";
-import { handleIssues } from "./handlers/issues";
-import { handleIssueComment } from "./handlers/issue-comment";
-import { handlePullRequest } from "./handlers/pull-request";
+import { getContext } from "./context.js";
+import { handleCheckRun } from "./handlers/check-run.js";
+import { handleIssues } from "./handlers/issues.js";
+import { handleIssueComment } from "./handlers/issue-comment.js";
+import { handlePullRequest } from "./handlers/pull-request.js";
 
 async function run(): Promise<void> {
   const ctx = getContext();

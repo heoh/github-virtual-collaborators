@@ -1,5 +1,5 @@
-import { TagStore } from "../../src/core/tag-store";
-import { updateTagStoreByContent } from "../../src/core/tag-util";
+import type { TagStore } from "../../src/core/tag-store.js";
+import { updateTagStoreByContent } from "../../src/core/tag-util.js";
 
 class InMemoryTagStore implements TagStore {
   private tagsByIssue = new Map<number, Set<string>>();

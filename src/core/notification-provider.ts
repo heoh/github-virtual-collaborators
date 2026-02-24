@@ -1,4 +1,4 @@
-import type { VCName } from "../types";
+import type { VCName } from "../types.js";
 
 export type NotificationPayload = Record<string, unknown>;
 

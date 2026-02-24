@@ -1,5 +1,5 @@
-import type { TagStore } from "../core/tag-store";
-import type { Octokit } from "./client";
+import type { TagStore } from "../core/tag-store.js";
+import type { Octokit } from "./client.js";
 import {
   getProjectInfo,
   getOrCreateProjectItem,
@@ -7,7 +7,7 @@ import {
   updateTextField,
   getIssueNodeId,
   getPRNodeId,
-} from "./client";
+} from "./client.js";
 
 export interface ProjectMetadataStoreOptions {
   octokit: Octokit;
